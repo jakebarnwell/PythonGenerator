@@ -2,6 +2,10 @@ import os
 import requests
 import json
 
+# Make sure to run fetch_python_ids first
+# to generate the store file of ids of
+# resources
+
 IDS_STORE = "python_file_ids.store"
 PYTHON_FILES_DIR = "python_files"
 if not os.path.exists(PYTHON_FILES_DIR):
