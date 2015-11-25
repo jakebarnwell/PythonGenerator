@@ -57,11 +57,19 @@ comma_fpdef_sp -> EMPTYSTRING
 
 stmt -> simple_stmt
 stmt -> compound_stmt
-simple_stmt -> small_stmt (';' small_stmt)* [';'] NEWLINE
-small_stmt -> (expr_stmt | print_stmt  | del_stmt | pass_stmt | flow_stmt |
-             import_stmt | global_stmt | exec_stmt | assert_stmt)
-expr_stmt -> testlist (augassign (yield_expr|testlist) |
-                     ('=' (yield_expr|testlist))*)
+simple_stmt -> small_stmt semicolon_small_stmt opt_semicolon NEWLINE
+simple_stmt -> small_stmt opt_semicolon NEWLINE
+small_stmt -> expr_stmt | print_stmt  | del_stmt | pass_stmt | flow_stmt | import_stmt | global_stmt | exec_stmt | assert_stmt
+expr_stmt -> testlist augassign_yldexpr_testlist
+expr_stmt -> testlist assign_yldexpr_testlist
+opt_semicolon -> ';'
+opt_semicolon -> EMPTYSTRING
+semicolon_small_stmt -> ';' small_stmt
+semicolon_small_stmt -> semicolon_small_stmt ';' small_stmt
+yldexpr_testlist -> yield_expr | testlist
+augassign_yldexpr_testlist -> augassign yldexpr_testlist
+assign_yldexpr_testlist -> '=' yldexpr_testlist
+assign_yldexpr_testlist -> assign_yldexpr_testlist '=' yldexpr_testlist
 
 augassign -> '+='
 augassign -> '-='
@@ -77,28 +85,54 @@ augassign -> '**='
 augassign -> '//='
 
 # For normal assignments, additional restrictions enforced by the interpreter
-print_stmt -> 'print' ( [ test (',' test)* [','] ] |
-                      '>>' test [ (',' test)+ [','] ] )
+print_stmt -> 'print' test comma_test_star opt_comma
+print_stmt -> 'print'
+print_stmt -> 'print' '>>' test comma_test_plus opt_comma
+print_stmt -> 'print' '>>' test
+comma_test -> ',' test
+comma_test_star -> EMPTYSTRING
+comma_test_star -> comma_test comma_test_star
+comma_test_plus -> comma_test comma_test
+comma_test_plus -> comma_test
 del_stmt -> 'del' exprlist
 pass_stmt -> 'pass'
 flow_stmt -> break_stmt | continue_stmt | return_stmt | raise_stmt | yield_stmt
 break_stmt -> 'break'
 continue_stmt -> 'continue'
-return_stmt -> 'return' [testlist]
+return_stmt -> 'return' opt_testlist
+opt_testlist -> testlist
+opt_testlist -> EMPTYSTRING
 yield_stmt -> yield_expr
-raise_stmt -> 'raise' [test [',' test [',' test]]]
+raise_stmt -> 'raise'
+raise_stmt -> 'raise' test
+raise_stmt -> 'raise' test ',' test opt_comma_test
+opt_comma_test = ',' test
+opt_comma_test -> EMPTYSTRING
 import_stmt -> import_name | import_from
 import_name -> 'import' dotted_as_names
-import_from -> ('from' ('.'* dotted_name | '.'+)
-              'import' ('*' | '(' import_as_names ')' | import_as_names))
-import_as_name -> NAME ['as' NAME]
-dotted_as_name -> dotted_name ['as' NAME]
-import_as_names -> import_as_name (',' import_as_name)* [',']
-dotted_as_names -> dotted_as_name (',' dotted_as_name)*
-dotted_name -> NAME ('.' NAME)*
-global_stmt -> 'global' NAME (',' NAME)*
-exec_stmt -> 'exec' expr ['in' test [',' test]]
-assert_stmt -> 'assert' test [',' test]
+import_from -> ('from' ('.'* dotted_name | '.'+) 'import' ('*' | '(' import_as_names ')' | import_as_names))
+import_as_name -> NAME
+import_as_name -> NAME 'as' NAME
+dotted_as_name -> dotted_name
+dotted_as_name -> dotted_name 'as' NAME
+import_as_names -> import_as_name opt_comma
+import_as_names -> import_as_name cian_plus opt_comma
+cian_plus -> ',' import_as_name
+cian_plus -> cian_plus ',' import_as_name
+dotted_as_names -> dotted_as_name
+dotted_as_names -> dotted_as_name cdan_plus
+cdan_plus -> ',' dotted_as_name
+cdan_plus -> cdan_plus ',' dotted_as_name
+dotted_name -> NAME
+dotted_name -> NAME dot_name_plus
+dot_name_plus -> '.' NAME
+dot_name_plus -> dot_name_plus '.' NAME
+global_stmt -> 'global' NAME
+global_stmt -> 'global' NAME comma_name_plus
+comma_name_plus -> ',' NAME
+comma_name_plus -> comma_name_plus ',' NAME
+exec_stmt -> 'exec' expr ['in' test opt_comma_test]
+assert_stmt -> 'assert' test opt_comma_test
 
 compound_stmt -> if_stmt | while_stmt | for_stmt | try_stmt | with_stmt | funcdef | classdef | decorated
 if_stmt -> 'if' test ':' suite ('elif' test ':' suite)* ['else' ':' suite]
