@@ -7,4 +7,4 @@ file_contents_str = f.read()
 f.close()
 
 grammar = CFG.fromstring(file_contents_str)
-grammar.productions()
+print grammar.productions()
