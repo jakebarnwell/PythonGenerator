@@ -2,7 +2,6 @@
 
 # file_input is the entire thing
 S -> file_input
-#S -> suite
 
 single_input -> NEWLINE
 single_input -> simple_stmt
@@ -470,3 +469,27 @@ STRING -> '"cat"'
 INDENT -> '<<INDENT>>'
 DEDENT -> '<<DEDENT>>'
 
+
+# 3, -3, +3, 0.3, 3.0, 3., .3, 3e-4, 3e+4, 3j
+#  0xFE, 080, 
+# [+|-][0x|0][DIGITS][.][DIGITS][(e|E)[+|-]DIGITS][j]
+#  except can't have . with 0x but CAN have . with 0
+#  can't have 0x with j
+#  but can have 0x with e3, actually can have 0xe-3
+
+NUMBER -> NUMERIC
+IMAGINARY -> 
+
+NUMERIC -> DIGIT_PLUS
+NUMERIC -> DIGIT_PLUS '.'
+NUMERIC -> DIGIT_PLUS '.' DIGIT_PLUS
+NUMERIC -> '.' DIGIT_PLUS
+NUMBER -> PM_PLUS DIGIT_PLUS
+DIGIT -> '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '0'
+DIGIT_PLUS -> DIGIT
+DIGIT_PLUS -> DIGIT DIGIT_PLUS
+
+PM_PLUS -> '+'
+PM_PLUS -> '-'
+PM_PLUS -> PM_PLUS '+'
+PM_PLUS -> PM_PLUS '-'

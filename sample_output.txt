@@ -1,0 +1,41 @@
+(S
+  (file_input
+    (newline_or_stmt_plus
+      (newline_or_stmt
+        (stmt
+          (compound_stmt
+            (funcdef
+              def
+              (NAME func)
+              (parameters ( ))
+              :
+              (suite
+                (NEWLINE <<NEWLINE>>)
+                (INDENT <<INDENT>>)
+                (stmt_plus
+                  (stmt
+                    (simple_stmt
+                      (small_stmt
+                        (flow_stmt
+                          (return_stmt
+                            return
+                            (testlist
+                              (test
+                                (or_test
+                                  (and_test
+                                    (not_test
+                                      (comparison
+                                        (expr
+                                          (xor_expr
+                                            (and_expr
+                                              (shift_expr
+                                                (arith_expr
+                                                  (term
+                                                    (factor
+                                                      (power
+                                                        (atom
+                                                          (NUMBER 11)))))))))))))))))))
+                      (NEWLINE <<NEWLINE>>))))
+                (DEDENT <<DEDENT>>))))))
+      (newline_or_stmt_plus (newline_or_stmt (NEWLINE <<NEWLINE>>))))
+    (ENDMARKER <<EOF>>)))
