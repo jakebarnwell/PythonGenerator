@@ -456,3 +456,13 @@ testlist1 -> test comma_test_star
 
 yield_expr -> 'yield' testlist
 yield_expr -> 'yield'
+
+NAME -> 'func'
+NAME -> 'x'
+ENDMARKER -> '<<EOF>>'
+NEWLINE -> '<<NEWLINE>>'
+NEWLINE -> '<<NEWLINE>>'
+NUMBER -> '11'
+STRING -> '"cat"'
+INDENT -> '<<INDENT>>'
+DEDENT -> '<<DEDENT>>'

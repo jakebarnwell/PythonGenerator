@@ -1,0 +1,1 @@
+def func ( ) <<NEWLINE>> <<INDENT>> return 11 <<DEDENT>> <<EOF>>
