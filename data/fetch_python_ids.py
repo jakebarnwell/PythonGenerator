@@ -19,6 +19,7 @@ for p in range(num_pages):
     
     data = json.loads(response.content)
     results = data["results"]
+    print len(results)
     ids.extend([r["id"] for r in results])
     names.extend([r["filename"] for r in results])
     print "Fetched {} results on page {}/{}".format(_PER_PAGE,p+1,num_pages)
@@ -27,4 +28,4 @@ with open(IDS_STORE, "w") as f:
     for i in xrange(len(ids)):
         f.write("{}\t{}\n".format(str(ids[i]),str(names[i])))
 
-print "Wrote results fo file {}".format(IDS_STORE)
+print "Wrote results to file {}".format(IDS_STORE)
