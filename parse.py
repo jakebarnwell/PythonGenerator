@@ -1,6 +1,8 @@
 from nltk import CFG
 
 GRAMMAR_FILENAME = "cfg_grammar.txt"
+# GRAMMAR_FILENAME = "test_cfg.txt"
+PRODUCTIONS_FILENAME = "grammar.productions"
 SIMPLEFILE_FILENAME = "file.py"
 
 
@@ -11,6 +13,9 @@ def grammar():
 	f.close()
 
 	grammar = CFG.fromstring(file_contents_str)
+	with open(PRODUCTIONS_FILENAME, "w") as prods:
+		prods.write(str(grammar.productions()))
+
 	return grammar
 
 def s1():

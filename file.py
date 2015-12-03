@@ -1,1 +1,1 @@
-def func ( ) <<NEWLINE>> <<INDENT>> return 11 <<DEDENT>> <<EOF>>
+def func ( ) : <<NEWLINE>> <<INDENT>> return 11 <<NEWLINE>> <<DEDENT>> <<NEWLINE>> <<EOF>>

@@ -1,5 +1,9 @@
 # This is for Python 2.7. Alternator has lowest precedence.
 
+# file_input is the entire thing
+S -> file_input
+#S -> suite
+
 single_input -> NEWLINE
 single_input -> simple_stmt
 single_input -> compound_stmt NEWLINE
@@ -461,8 +465,8 @@ NAME -> 'func'
 NAME -> 'x'
 ENDMARKER -> '<<EOF>>'
 NEWLINE -> '<<NEWLINE>>'
-NEWLINE -> '<<NEWLINE>>'
 NUMBER -> '11'
 STRING -> '"cat"'
 INDENT -> '<<INDENT>>'
 DEDENT -> '<<DEDENT>>'
+
