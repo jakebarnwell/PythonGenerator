@@ -3,30 +3,15 @@
 "Usage: unparse.py <path to source file>"
 import sys
 import ast
-import cStringIO
-import os
-
-# Large float and imaginary literals get turned into infinities in the AST.
-# We unparse those infinities to INFSTR.
-INFSTR = "1e" + repr(sys.float_info.max_10_exp + 1)
-
-def interleave(inter, f, seq):
-    """Call f on each item in seq, calling inter() in between.
-    """
-    seq = iter(seq)
-    try:
-        f(next(seq))
-    except StopIteration:
-        pass
-    else:
-        for x in seq:
-            inter()
-            f(x)
 
 class Unparser:
     """Methods in this class recursively traverse an AST and
     output source code for the abstract syntax; original formatting
     is disregarded. """
+
+    # Large float and imaginary literals get turned into infinities in the AST.
+    # We unparse those infinities to INFSTR.
+    INFSTR = "1e" + repr(sys.float_info.max_10_exp + 1)
 
     def __init__(self, tree, file = sys.stdout):
         """Unparser(tree, file=sys.stdout) -> None.
@@ -83,7 +68,7 @@ class Unparser:
 
     def _Import(self, t):
         self.fill("import ")
-        interleave(lambda: self.write(", "), self.dispatch, t.names)
+        self.interleave(lambda: self.write(", "), self.dispatch, t.names)
 
     def _ImportFrom(self, t):
         # A from __future__ import may affect unparsing, so record it.
@@ -95,7 +80,7 @@ class Unparser:
         if t.module:
             self.write(t.module)
         self.write(" import ")
-        interleave(lambda: self.write(", "), self.dispatch, t.names)
+        self.interleave(lambda: self.write(", "), self.dispatch, t.names)
 
     def _Assign(self, t):
         self.fill()
@@ -127,7 +112,7 @@ class Unparser:
 
     def _Delete(self, t):
         self.fill("del ")
-        interleave(lambda: self.write(", "), self.dispatch, t.targets)
+        self.interleave(lambda: self.write(", "), self.dispatch, t.targets)
 
     def _Assert(self, t):
         self.fill("assert ")
@@ -162,7 +147,7 @@ class Unparser:
 
     def _Global(self, t):
         self.fill("global ")
-        interleave(lambda: self.write(", "), self.write, t.names)
+        self.interleave(lambda: self.write(", "), self.write, t.names)
 
     def _Yield(self, t):
         self.write("(")
@@ -338,13 +323,13 @@ class Unparser:
         if repr_n.startswith("-"):
             self.write("(")
         # Substitute overflowing decimal literal for AST infinities.
-        self.write(repr_n.replace("inf", INFSTR))
+        self.write(repr_n.replace("inf", self.INFSTR))
         if repr_n.startswith("-"):
             self.write(")")
 
     def _List(self, t):
         self.write("[")
-        interleave(lambda: self.write(", "), self.dispatch, t.elts)
+        self.interleave(lambda: self.write(", "), self.dispatch, t.elts)
         self.write("]")
 
     def _ListComp(self, t):
@@ -398,7 +383,7 @@ class Unparser:
     def _Set(self, t):
         assert(t.elts) # should be at least one element
         self.write("{")
-        interleave(lambda: self.write(", "), self.dispatch, t.elts)
+        self.interleave(lambda: self.write(", "), self.dispatch, t.elts)
         self.write("}")
 
     def _Dict(self, t):
@@ -408,7 +393,7 @@ class Unparser:
             self.dispatch(k)
             self.write(": ")
             self.dispatch(v)
-        interleave(lambda: self.write(", "), write_pair, zip(t.keys, t.values))
+        self.interleave(lambda: self.write(", "), write_pair, zip(t.keys, t.values))
         self.write("}")
 
     def _Tuple(self, t):
@@ -418,7 +403,7 @@ class Unparser:
             self.dispatch(elt)
             self.write(",")
         else:
-            interleave(lambda: self.write(", "), self.dispatch, t.elts)
+            self.interleave(lambda: self.write(", "), self.dispatch, t.elts)
         self.write(")")
 
     unop = {"Invert":"~", "Not": "not", "UAdd":"+", "USub":"-"}
@@ -463,7 +448,7 @@ class Unparser:
     def _BoolOp(self, t):
         self.write("(")
         s = " %s " % self.boolops[t.op.__class__]
-        interleave(lambda: self.write(s), self.dispatch, t.values)
+        self.interleave(lambda: self.write(s), self.dispatch, t.values)
         self.write(")")
 
     def _Attribute(self,t):
@@ -524,7 +509,7 @@ class Unparser:
             self.dispatch(t.step)
 
     def _ExtSlice(self, t):
-        interleave(lambda: self.write(', '), self.dispatch, t.dims)
+        self.interleave(lambda: self.write(', '), self.dispatch, t.dims)
 
     # others
     def _arguments(self, t):
@@ -570,39 +555,15 @@ class Unparser:
         if t.asname:
             self.write(" as "+t.asname)
 
-def roundtrip(filename, output=sys.stdout):
-    with open(filename, "r") as pyfile:
-        source = pyfile.read()
-    tree = compile(source, filename, "exec", ast.PyCF_ONLY_AST)
-    Unparser(tree, output)
-
-
-
-def testdir(a):
-    try:
-        names = [n for n in os.listdir(a) if n.endswith('.py')]
-    except OSError:
-        sys.stderr.write("Directory not readable: %s" % a)
-    else:
-        for n in names:
-            fullname = os.path.join(a, n)
-            if os.path.isfile(fullname):
-                output = cStringIO.StringIO()
-                print 'Testing %s' % fullname
-                try:
-                    roundtrip(fullname, output)
-                except Exception as e:
-                    print '  Failed to compile, exception is %s' % repr(e)
-            elif os.path.isdir(fullname):
-                testdir(fullname)
-
-def main(args):
-    if args[0] == '--testdir':
-        for a in args[1:]:
-            testdir(a)
-    else:
-        for a in args:
-            roundtrip(a)
-
-if __name__=='__main__':
-    main(sys.argv[1:])
+    def interleave(self, inter, f, seq):
+        """Call f on each item in seq, calling inter() in between.
+        """
+        seq = iter(seq)
+        try:
+            f(next(seq))
+        except StopIteration:
+            pass
+        else:
+            for x in seq:
+                inter()
+                f(x)
