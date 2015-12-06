@@ -1,23 +1,26 @@
 from nltk import CFG
 
-GRAMMAR_FILENAME = "cfg_grammar.txt"
-# GRAMMAR_FILENAME = "test_cfg.txt"
-PRODUCTIONS_FILENAME = "grammar.productions"
-SIMPLEFILE_FILENAME = "file.py"
+import sys
+import ast
+import Unparser
 
+PARSE_FILENAME = "parse.py"
+OUTPUT_FILENAME_STEM = ".out.py"
 
+def main(args):
+	if len(args) > 0:
+		filename = args[0]
+	else:
+		filename = PARSE_FILENAME
 
-def grammar():
-	f = open(GRAMMAR_FILENAME, "r")
-	file_contents_str = f.read()
-	f.close()
+	with open(filename, "r") as srcfile:
+		source = srcfile.read()
 
-	grammar = CFG.fromstring(file_contents_str)
-	with open(PRODUCTIONS_FILENAME, "w") as prods:
-		prods.write(str(grammar.productions()))
+	tree = compile(source, filename, "exec", ast.PyCF_ONLY_AST)
 
-	return grammar
+	outfilename = "{}{}".format(filename, OUTPUT_FILENAME_STEM)
+	with open(outfilename, "w") as outfile:
+		Unparser.Unparser(tree, outfile)
 
-def s1():
-	with open(SIMPLEFILE_FILENAME, "r") as f:
-		return f.read().split(" ")
+if __name__=='__main__':
+	main(sys.argv[1:])
