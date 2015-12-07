@@ -18,9 +18,10 @@ def process(tree):
 	childNames = [child.__class__.__name__ for child in children]
 	childrenString = " ".join(childNames)
 
-	if len(children) > 0:
-		print me + " -> " + childrenString
-
+	if len(children) > 0 or len(tree._fields) > 0:
+		cs = childrenString if len(children) > 0 else "X"
+		fs = [field+"="+str(getattr(tree, field)) for field in tree._fields]
+		print me + str(fs) + " -> " + cs
 
 	for child_tree in children:
 		# print ast.dump(child_tree)
@@ -32,6 +33,14 @@ def process(tree):
 
 # tree._attributes: lineno, col_offset
 # tree._fields: e.g. lower, upper, step, n, id, ctx, s, etc.
+
+# When doing the rules, couple the fields with the children. For example:
+# Slice['lower=<_ast.Num object at 0x7f09e94bced0>', 'upper=None', 'step=None'] -> Num
+# The children of Slice are directly linked to the fields (in this case, 'lower')
+# In fact, I'm pretty sure the children only exist if the relevent fields are filled in
+
+# I'm going to want rules like this
+#  Node ->(fields not None)
 
 
 # Num(n=1), Str(s='foo'), 
@@ -49,6 +58,8 @@ def record_fields(tree):
 		else:
 			all_fields[me] = set(fields)
 
+
+
 def main(args):
 	if len(args) > 0:
 		filename = args[0]
@@ -61,10 +72,10 @@ def main(args):
 	tree = compile(source, filename, "exec", ast.PyCF_ONLY_AST)
 	process(tree)
 
-	with open("fields.txt", "w") as fields_file:
-		for key in all_fields:
-			line = "{} : {}\n".format(key, list(all_fields[key]))
-			fields_file.write(line)
+	# with open("fields.txt", "w") as fields_file:
+	# 	for key in all_fields:
+	# 		line = "{} : {}\n".format(key, list(all_fields[key]))
+	# 		fields_file.write(line)
 			
 	outfilename = "{}{}".format(filename, OUTPUT_FILENAME_STEM)
 	with open(outfilename, "w") as outfile:
