@@ -1,0 +1,3736 @@
+Module -> [('body', ['Expr', 'Import', 'Import', 'ClassDef'])]
+Expr -> [('value', 'Str')]
+Str -> [('s', 'str')]
+Import -> [('names', ['alias'])]
+alias -> [('name', 'str'), ('asname', 'NoneType')]
+Import -> [('names', ['alias'])]
+alias -> [('name', 'str'), ('asname', 'NoneType')]
+ClassDef -> [('name', 'str'), ('bases', []), ('body', ['Expr', 'Assign', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'Assign', 'FunctionDef', 'Assign', 'FunctionDef', 'Assign', 'FunctionDef', 'Assign', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef', 'FunctionDef']), ('decorator_list', [])]
+Expr -> [('value', 'Str')]
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'BinOp')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+BinOp -> [('left', 'Str'), ('op', 'Add'), ('right', 'Call')]
+Str -> [('s', 'str')]
+Add -> <NULL>
+Call -> [('func', 'Name'), ('args', ['BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+BinOp -> [('left', 'Attribute'), ('op', 'Add'), ('right', 'Num')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Add -> <NULL>
+Num -> [('n', 'int')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Assign', 'Assign', 'Assign', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', ['Attribute'])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Str')]
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Attribute']), ('value', 'Name')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Store')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Assign -> [('targets', ['Attribute']), ('value', 'List')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Store')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Store -> <NULL>
+List -> [('elts', []), ('ctx', 'Load')]
+Load -> <NULL>
+Assign -> [('targets', ['Attribute']), ('value', 'Num')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Store')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Store -> <NULL>
+Num -> [('n', 'int')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', ['Str'])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Str')]
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+BinOp -> [('left', 'BinOp'), ('op', 'Add'), ('right', 'Name')]
+BinOp -> [('left', 'Str'), ('op', 'Add'), ('right', 'BinOp')]
+Str -> [('s', 'str')]
+Add -> <NULL>
+BinOp -> [('left', 'Str'), ('op', 'Mult'), ('right', 'Attribute')]
+Str -> [('s', 'str')]
+Mult -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Add -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Str')]
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'AugAssign']), ('decorator_list', [])]
+arguments -> [('args', ['Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Str')]
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+AugAssign -> [('target', 'Attribute'), ('op', 'Add'), ('value', 'Num')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Store')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Store -> <NULL>
+Add -> <NULL>
+Num -> [('n', 'int')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'AugAssign']), ('decorator_list', [])]
+arguments -> [('args', ['Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Str')]
+Str -> [('s', 'str')]
+AugAssign -> [('target', 'Attribute'), ('op', 'Sub'), ('value', 'Num')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Store')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Store -> <NULL>
+Sub -> <NULL>
+Num -> [('n', 'int')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'If', 'Assign', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Str')]
+Str -> [('s', 'str')]
+If -> [('test', 'Call'), ('body', ['For', 'Return']), ('orelse', [])]
+Call -> [('func', 'Name'), ('args', ['Name', 'Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Name'), ('body', ['Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Return -> [('value', 'NoneType')]
+Assign -> [('targets', ['Name']), ('value', 'Call')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Name', 'BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+BinOp -> [('left', 'Str'), ('op', 'Add'), ('right', 'Attribute')]
+Str -> [('s', 'str')]
+Add -> <NULL>
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Name'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['For']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Lambda', 'Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Lambda -> [('args', 'arguments'), ('body', 'Call')]
+arguments -> [('args', []), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['If', 'Expr', 'Expr', 'If', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+If -> [('test', 'BoolOp'), ('body', ['Expr']), ('orelse', [])]
+BoolOp -> [('op', 'And'), ('values', ['Attribute', 'Compare'])]
+And -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Compare -> [('left', 'Attribute'), ('ops', ['Eq']), ('comparators', ['Str'])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Eq -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['GeneratorExp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+GeneratorExp -> [('elt', 'Attribute'), ('generators', ['comprehension'])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+comprehension -> [('target', 'Name'), ('iter', 'Attribute'), ('ifs', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+BinOp -> [('left', 'Str'), ('op', 'Mult'), ('right', 'Attribute')]
+Str -> [('s', 'str')]
+Mult -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Lambda', 'Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Lambda -> [('args', 'arguments'), ('body', 'Call')]
+arguments -> [('args', []), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'For', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+BinOp -> [('left', 'BinOp'), ('op', 'Add'), ('right', 'Str')]
+BinOp -> [('left', 'Str'), ('op', 'Add'), ('right', 'Subscript')]
+Str -> [('s', 'str')]
+Add -> <NULL>
+Subscript -> [('value', 'Attribute'), ('slice', 'Index'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Index -> [('value', 'Attribute')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Add -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Lambda', 'Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Lambda -> [('args', 'arguments'), ('body', 'Call')]
+arguments -> [('args', []), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'If', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Assign', 'If', 'For', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr', 'Assign']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['If', 'Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Name'), ('body', ['Expr']), ('orelse', ['Assign'])]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+If -> [('test', 'UnaryOp'), ('body', ['Expr']), ('orelse', [])]
+UnaryOp -> [('op', 'Not'), ('operand', 'Attribute')]
+Not -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Lambda', 'Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Lambda -> [('args', 'arguments'), ('body', 'Call')]
+arguments -> [('args', []), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'If', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'If', 'If', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+If -> [('test', 'Attribute'), ('body', ['Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'Expr', 'For', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr', 'Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['If', 'Expr', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+If -> [('test', 'BoolOp'), ('body', ['Expr']), ('orelse', ['Expr', 'Expr', 'Expr', 'Expr'])]
+BoolOp -> [('op', 'And'), ('values', ['Compare', 'Call'])]
+And -> <NULL>
+Compare -> [('left', 'Call'), ('ops', ['Eq']), ('comparators', ['Num'])]
+Call -> [('func', 'Name'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Eq -> <NULL>
+Num -> [('n', 'int')]
+Call -> [('func', 'Name'), ('args', ['Subscript', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Subscript -> [('value', 'Attribute'), ('slice', 'Index'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Index -> [('value', 'Num')]
+Num -> [('n', 'int')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'If', 'If', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'For', 'Expr', 'If', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+BinOp -> [('left', 'Str'), ('op', 'Add'), ('right', 'Attribute')]
+Str -> [('s', 'str')]
+Add -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'For', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'For', 'Expr', 'Expr', 'Expr', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+BinOp -> [('left', 'BinOp'), ('op', 'Add'), ('right', 'Str')]
+BinOp -> [('left', 'Str'), ('op', 'Add'), ('right', 'Attribute')]
+Str -> [('s', 'str')]
+Add -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Add -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'Expr', 'Expr', 'Expr', 'Expr', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr', 'Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'Expr', 'Expr', 'While', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+While -> [('test', 'BoolOp'), ('body', ['Assign', 'Expr', 'Expr', 'Expr', 'Expr', 'Expr']), ('orelse', [])]
+BoolOp -> [('op', 'And'), ('values', ['Attribute', 'Compare', 'Call'])]
+And -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Compare -> [('left', 'Call'), ('ops', ['Eq']), ('comparators', ['Num'])]
+Call -> [('func', 'Name'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Eq -> <NULL>
+Num -> [('n', 'int')]
+Call -> [('func', 'Name'), ('args', ['Subscript', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Subscript -> [('value', 'Attribute'), ('slice', 'Index'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Index -> [('value', 'Num')]
+Num -> [('n', 'int')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Assign -> [('targets', ['Name']), ('value', 'Subscript')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Subscript -> [('value', 'Attribute'), ('slice', 'Index'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Index -> [('value', 'Num')]
+Num -> [('n', 'int')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr', 'Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'Expr', 'Expr', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr', 'Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'If', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+If -> [('test', 'Compare'), ('body', ['Expr']), ('orelse', ['If'])]
+Compare -> [('left', 'Str'), ('ops', ['NotIn']), ('comparators', ['Attribute'])]
+Str -> [('s', 'str')]
+NotIn -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Call']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Call'), ('body', ['Expr']), ('orelse', ['If'])]
+Call -> [('func', 'Name'), ('args', ['Attribute', 'Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+BinOp -> [('left', 'Str'), ('op', 'Add'), ('right', 'Call')]
+Str -> [('s', 'str')]
+Add -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Call'), ('body', ['Expr']), ('orelse', ['Assert'])]
+Call -> [('func', 'Name'), ('args', ['Attribute', 'Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Call']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Call'), ('attr', 'str'), ('ctx', 'Load')]
+Call -> [('func', 'Name'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assert -> [('test', 'Name'), ('msg', 'Str')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Assign', 'If', 'Expr', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Assign -> [('targets', ['Name']), ('value', 'Call')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Call'), ('body', ['Expr']), ('orelse', [])]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Call']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Call -> [('func', 'Attribute'), ('args', ['Str', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Call'), ('body', ['Expr']), ('orelse', [])]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Lambda', 'Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Lambda -> [('args', 'arguments'), ('body', 'Call')]
+arguments -> [('args', []), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'For', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'For', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'For', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'Expr', 'For', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'Expr', 'For']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'Expr', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Assert', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Assert -> [('test', 'Attribute'), ('msg', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Lambda', 'Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Lambda -> [('args', 'arguments'), ('body', 'Call')]
+arguments -> [('args', []), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'FunctionDef', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Assign', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Assign -> [('targets', ['Tuple']), ('value', 'Name')]
+Tuple -> [('elts', ['Name', 'Name']), ('ctx', 'Store')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Lambda', 'Name', 'Call']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Lambda -> [('args', 'arguments'), ('body', 'Call')]
+arguments -> [('args', []), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'If', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+If -> [('test', 'Compare'), ('body', ['Assign', 'Expr', 'Expr']), ('orelse', ['Expr'])]
+Compare -> [('left', 'Call'), ('ops', ['Eq']), ('comparators', ['Num'])]
+Call -> [('func', 'Name'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Eq -> <NULL>
+Num -> [('n', 'int')]
+Assign -> [('targets', ['Tuple']), ('value', 'Attribute')]
+Tuple -> [('elts', ['Name']), ('ctx', 'Store')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Lambda', 'Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Lambda -> [('args', 'arguments'), ('body', 'Call')]
+arguments -> [('args', []), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Dict')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Dict -> [('keys', ['Str', 'Str', 'Str', 'Str']), ('values', ['Str', 'Str', 'Str', 'Str'])]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'If', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Subscript']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Subscript -> [('value', 'Attribute'), ('slice', 'Index'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Index -> [('value', 'Attribute')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+If -> [('test', 'BoolOp'), ('body', ['Expr', 'Expr', 'Expr']), ('orelse', ['Expr'])]
+BoolOp -> [('op', 'And'), ('values', ['Call', 'Call'])]
+And -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Dict')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Dict -> [('keys', ['Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str']), ('values', ['Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str'])]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+BinOp -> [('left', 'BinOp'), ('op', 'Add'), ('right', 'Str')]
+BinOp -> [('left', 'Str'), ('op', 'Add'), ('right', 'Subscript')]
+Str -> [('s', 'str')]
+Add -> <NULL>
+Subscript -> [('value', 'Attribute'), ('slice', 'Index'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Index -> [('value', 'Attribute')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Add -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Dict')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Dict -> [('keys', ['Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str']), ('values', ['Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str', 'Str'])]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'For', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+For -> [('target', 'Tuple'), ('iter', 'Call'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Tuple -> [('elts', ['Name', 'Name']), ('ctx', 'Store')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Store -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+BinOp -> [('left', 'BinOp'), ('op', 'Add'), ('right', 'Str')]
+BinOp -> [('left', 'Str'), ('op', 'Add'), ('right', 'Subscript')]
+Str -> [('s', 'str')]
+Add -> <NULL>
+Subscript -> [('value', 'Attribute'), ('slice', 'Index'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Index -> [('value', 'Attribute')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Add -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Dict')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Dict -> [('keys', ['Attribute', 'Attribute']), ('values', ['Str', 'Str'])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Assign', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'BinOp')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+BinOp -> [('left', 'Str'), ('op', 'Mod'), ('right', 'Subscript')]
+Str -> [('s', 'str')]
+Mod -> <NULL>
+Subscript -> [('value', 'Attribute'), ('slice', 'Index'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Index -> [('value', 'Attribute')]
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Lambda', 'Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Lambda -> [('args', 'arguments'), ('body', 'Call')]
+arguments -> [('args', []), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'If', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'BoolOp'), ('body', ['Expr']), ('orelse', [])]
+BoolOp -> [('op', 'And'), ('values', ['Call', 'Call'])]
+And -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Attribute', 'Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Attribute'), ('attr', 'str'), ('ctx', 'Load')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Assign', 'For', 'For', 'If', 'If', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['If', 'Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Name'), ('body', ['Expr']), ('orelse', ['Assign'])]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Attribute'), ('body', ['If', 'Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Name'), ('body', ['Expr']), ('orelse', ['Assign'])]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['If', 'Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Name'), ('body', ['Expr']), ('orelse', ['Assign'])]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['If', 'Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Name'), ('body', ['Expr']), ('orelse', ['Assign'])]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['If', 'Expr', 'If', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+If -> [('test', 'Attribute'), ('body', ['Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Lambda', 'Attribute', 'Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Lambda -> [('args', 'arguments'), ('body', 'Call')]
+arguments -> [('args', []), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Assign', 'Assign', 'For', 'If', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Assign -> [('targets', ['Name']), ('value', 'BinOp')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+BinOp -> [('left', 'BinOp'), ('op', 'Add'), ('right', 'Attribute')]
+BinOp -> [('left', 'List'), ('op', 'Mult'), ('right', 'BinOp')]
+List -> [('elts', ['Name']), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Mult -> <NULL>
+BinOp -> [('left', 'Call'), ('op', 'Sub'), ('right', 'Call')]
+Call -> [('func', 'Name'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Sub -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Add -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+For -> [('target', 'Tuple'), ('iter', 'Call'), ('body', ['If', 'Expr', 'If']), ('orelse', [])]
+Tuple -> [('elts', ['Name', 'Name']), ('ctx', 'Store')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Store -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Attribute', 'Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+If -> [('test', 'Name'), ('body', ['Assign']), ('orelse', ['Expr'])]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Tuple')]
+Tuple -> [('elts', ['Call']), ('ctx', 'Load')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Name'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['If', 'Expr', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Name'), ('body', ['Assign']), ('orelse', ['Expr'])]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['If', 'Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Name'), ('body', ['Assign']), ('orelse', ['Expr'])]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Assign -> [('targets', ['Name']), ('value', 'Name')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+BinOp -> [('left', 'Str'), ('op', 'Add'), ('right', 'Attribute')]
+Str -> [('s', 'str')]
+Add -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Expr', 'Expr', 'Expr', 'Expr', 'Expr']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Str']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Str -> [('s', 'str')]
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'If']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['Attribute']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+If -> [('test', 'Attribute'), ('body', ['Expr']), ('orelse', [])]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Attribute'), ('args', ['BinOp']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+BinOp -> [('left', 'Str'), ('op', 'Add'), ('right', 'Attribute')]
+Str -> [('s', 'str')]
+Add -> <NULL>
+Attribute -> [('value', 'Name'), ('attr', 'str'), ('ctx', 'Load')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Load -> <NULL>
+FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['Expr', 'Assign', 'TryExcept']), ('decorator_list', [])]
+arguments -> [('args', ['Name', 'Name', 'Name', 'Name']), ('vararg', 'NoneType'), ('kwarg', 'NoneType'), ('defaults', [])]
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Param')]
+Param -> <NULL>
+Expr -> [('value', 'Str')]
+Str -> [('s', 'str')]
+Assign -> [('targets', ['Name']), ('value', 'Call')]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+TryExcept -> [('body', ['Expr']), ('handlers', ['ExceptHandler']), ('orelse', ['For'])]
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Name'), ('args', ['Call']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Call -> [('func', 'Name'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+ExceptHandler -> [('type', 'Name'), ('name', 'NoneType'), ('body', ['Pass'])]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Pass -> <NULL>
+For -> [('target', 'Name'), ('iter', 'Name'), ('body', ['Expr', 'Expr']), ('orelse', [])]
+Name -> [('id', 'str'), ('ctx', 'Store')]
+Store -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Name'), ('args', []), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Expr -> [('value', 'Call')]
+Call -> [('func', 'Name'), ('args', ['Name']), ('keywords', []), ('starargs', 'NoneType'), ('kwargs', 'NoneType')]
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
+Name -> [('id', 'str'), ('ctx', 'Load')]
+Load -> <NULL>
