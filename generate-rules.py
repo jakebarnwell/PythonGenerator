@@ -139,9 +139,9 @@ def main(args):
 		heads.write(json.dumps(all_heads))
 
 	outfilename = "{}{}".format(filename, OUTPUT_FILENAME_STEM)
-	with open(outfilename, "w") as outfile:
+	# with open(outfilename, "w") as outfile:
 		# Unparser.Unparser(tree, outfile)
-		pass
+		# pass
 
 if __name__=='__main__':
 	main(sys.argv[1:])
