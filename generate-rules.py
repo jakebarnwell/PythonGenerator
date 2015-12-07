@@ -9,6 +9,10 @@ PARSE_FILENAME = "Unparser.py"
 OUTPUT_FILENAME_STEM = ".out.py"
 
 rules = []
+all_rules = {}
+all_heads = {}
+all_fields = {}
+
 def process(tree):
 	me = tree.__class__.__name__
 	
@@ -40,8 +44,7 @@ def process(tree):
 
 		process(child_tree)
 
-all_rules = {}
-all_heads = {}
+
 def process_rule(tree):
 	me = tree.__class__.__name__
 	fields = []
@@ -96,7 +99,7 @@ def fieldValue2className(val):
 
 # Num(n=1), Str(s='foo'), 
 
-all_fields = {}
+
 def record_fields(tree):
 	me = tree.__class__.__name__
 	fields = tree._fields
@@ -109,28 +112,38 @@ def record_fields(tree):
 		else:
 			all_fields[me] = set(fields)
 
+def process_all():
+	FILESDIR = "data/python_files"
+	with open("errors.log", "w") as errorsfile:
+		for file_tuple in os.walk(FILESDIR):
+			try:
+				filename = "{}/{}".format(file_tuple[0],file_tuple[2][0])
+				with open(filename, "r") as pyfile:
+					source = srcfile.read()
+				tree = ast.parse(source)
+				process(tree)
+			except Exception as e:
+				errorsfile.write(str(e));
 
 
 def main(args):
-	if len(args) > 0:
-		filename = args[0]
+	if len(args) > 0 and args[0] == "all":
+		process_all()
 	else:
-		filename = PARSE_FILENAME
+		with open(PARSE_FILENAME, "r") as srcfile:
+			source = srcfile.read()
 
-	with open(filename, "r") as srcfile:
-		source = srcfile.read()
-
-	tree = compile(source, filename, "exec", ast.PyCF_ONLY_AST)
-	process(tree)
+		tree = ast.parse(source)
+		process(tree)
 
 	# with open("fields.txt", "w") as fields_file:
 	# 	for key in all_fields:
 	# 		line = "{} : {}\n".format(key, list(all_fields[key]))
 	# 		fields_file.write(line)
 
-	with open("rules.txt", "w") as outrules:
-		for r in rules:
-			outrules.write(r + "\n")
+	# with open("rules.txt", "w") as outrules:
+	# 	for r in rules:
+	# 		outrules.write(r + "\n")
 			
 	with open("all-rules.txt", "w") as outrules:
 		outrules.write(json.dumps(all_rules))
@@ -138,7 +151,7 @@ def main(args):
 	with open("all-heads.txt", "w") as heads:
 		heads.write(json.dumps(all_heads))
 
-	outfilename = "{}{}".format(filename, OUTPUT_FILENAME_STEM)
+	# outfilename = "{}{}".format(filename, OUTPUT_FILENAME_STEM)
 	# with open(outfilename, "w") as outfile:
 		# Unparser.Unparser(tree, outfile)
 		# pass
