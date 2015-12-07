@@ -4,6 +4,7 @@ import sys
 import ast
 import Unparser
 import json
+import os
 
 PARSE_FILENAME = "Unparser.py"
 OUTPUT_FILENAME_STEM = ".out.py"
@@ -23,16 +24,16 @@ def process(tree):
 	childNames = [child.__class__.__name__ for child in children]
 	childrenString = " ".join(childNames)
 
-	if len(children) > 0 or len(tree._fields) > 0:
-		cs = childrenString if len(children) > 0 else "X"
-		fs = [field+"="+str(getattr(tree, field)) for field in tree._fields]
+	# if len(children) > 0 or len(tree._fields) > 0:
+	# 	cs = childrenString if len(children) > 0 else "X"
+	# 	fs = [field+"="+str(getattr(tree, field)) for field in tree._fields]
 		# print me + str(fs) + " -> " + cs
 
-	print "\n new tree for " + me + ":"
-	for f in ast.iter_fields(tree):
-		print f
-	for c in children:
-		print c
+	# print "\n new tree for " + me + ":"
+	# for f in ast.iter_fields(tree):
+	# 	print f
+	# for c in children:
+	# 	print c
 
 	process_rule(tree)
 
@@ -41,7 +42,6 @@ def process(tree):
 		# print vars(child_tree)
 		# print dir(child_tree)
 		# print "attrs: " + str(child_tree._attributes)
-
 		process(child_tree)
 
 
@@ -114,16 +114,19 @@ def record_fields(tree):
 
 def process_all():
 	FILESDIR = "data/python_files"
+	n = 0
 	with open("errors.log", "w") as errorsfile:
 		for file_tuple in os.walk(FILESDIR):
+			n += 1
+			print "Processing file {}".format(n)
 			try:
 				filename = "{}/{}".format(file_tuple[0],file_tuple[2][0])
 				with open(filename, "r") as pyfile:
-					source = srcfile.read()
+					source = pyfile.read()
 				tree = ast.parse(source)
 				process(tree)
 			except Exception as e:
-				errorsfile.write(str(e));
+				errorsfile.write(str(e) + "\n");
 
 
 def main(args):
