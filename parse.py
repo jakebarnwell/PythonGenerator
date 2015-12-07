@@ -5,7 +5,7 @@ import ast
 import Unparser
 import json
 
-PARSE_FILENAME = "parse.py"
+PARSE_FILENAME = "small.py"
 OUTPUT_FILENAME_STEM = ".out.py"
 
 def process(tree):
