@@ -13,6 +13,7 @@ rules = []
 all_rules = {}
 all_heads = {}
 all_fields = {}
+all_objects = {}
 
 def process(tree):
 	me = tree.__class__.__name__
@@ -71,6 +72,9 @@ def process_rule(tree):
 	else:
 		all_heads[me] = [nextLine]
 
+	if me not in all_objects:
+		all_objects[me] = tree
+
 def fieldValue2className(val):
 	className = val.__class__.__name__
 
@@ -127,7 +131,7 @@ def process_all():
 				process(tree)
 			except Exception as e:
 				errorsfile.write(str(e) + "\n");
-
+	return (all_heads, all_rules, all_objects)
 
 def main(args):
 	if len(args) > 0 and args[0] == "all":
@@ -138,15 +142,6 @@ def main(args):
 
 		tree = ast.parse(source)
 		process(tree)
-
-	# with open("fields.txt", "w") as fields_file:
-	# 	for key in all_fields:
-	# 		line = "{} : {}\n".format(key, list(all_fields[key]))
-	# 		fields_file.write(line)
-
-	# with open("rules.txt", "w") as outrules:
-	# 	for r in rules:
-	# 		outrules.write(r + "\n")
 			
 	with open("all-rules.txt", "w") as outrules:
 		outrules.write(json.dumps(all_rules))
