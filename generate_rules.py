@@ -5,6 +5,8 @@ import ast
 import Unparser
 import json
 import os
+import load
+import copy
 
 PARSE_FILENAME = "Unparser.py"
 OUTPUT_FILENAME_STEM = ".out.py"
@@ -103,6 +105,10 @@ def fieldValue2className(val):
 
 # Num(n=1), Str(s='foo'), 
 
+def write_dict(d, filename):
+	with open(filename, "w") as outfile:
+		outfile.write(json.dumps(d))
+
 
 def record_fields(tree):
 	me = tree.__class__.__name__
@@ -116,12 +122,16 @@ def record_fields(tree):
 		else:
 			all_fields[me] = set(fields)
 
+DEBUG = True
+thresh = 100
 def process_all():
 	FILESDIR = "data/python_files"
 	n = 0
 	with open("errors.log", "w") as errorsfile:
 		for file_tuple in os.walk(FILESDIR):
 			n += 1
+			if DEBUG and n > thresh:
+				break
 			print "Processing file {}".format(n)
 			try:
 				filename = "{}/{}".format(file_tuple[0],file_tuple[2][0])
@@ -131,7 +141,36 @@ def process_all():
 				process(tree)
 			except Exception as e:
 				errorsfile.write(str(e) + "\n");
-	return (all_heads, all_rules, all_objects)
+
+	pcfg = rules2pcfg(all_rules, all_heads)
+	print "here"
+	return (all_heads, pcfg, all_objects)
+
+def rules2pcfg(rules, heads):
+	"""
+	Given a dict of all rules and all heads, returns a PCFG for
+	the rules.
+
+	Args:
+	 heads: dict, mapping from 'head' (e.g. 'FunctionDef') to a list of all
+	 		possible (string-versioned) re-write rules for that head, e.g.
+	 		FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['For']), ('decorator_list', [])]
+	 		where each tuple is a field-tuple of the form (fieldName, fieldValueClass)
+	 rules: dict, mapping from each stringified-rule of the form listed in heads 
+	 		to the number of occurrences (invocations) of that rule in the corpora
+	"""
+	pcfg = copy.copy(rules)
+
+	for head in heads:
+		head_rewrite_rules = heads[head]
+		head_sum = 0
+		for rule in head_rewrite_rules:
+			head_sum += rules[rule]
+		for rule in head_rewrite_rules:
+			pcfg[rule] = rules[rule] * 1.0 / head_sum
+	write_dict(pcfg, "pcfg.txt")
+	return pcfg
+
 
 def main(args):
 	if len(args) > 0 and args[0] == "all":
@@ -142,12 +181,9 @@ def main(args):
 
 		tree = ast.parse(source)
 		process(tree)
-			
-	with open("all-rules.txt", "w") as outrules:
-		outrules.write(json.dumps(all_rules))
 
-	with open("all-heads.txt", "w") as heads:
-		heads.write(json.dumps(all_heads))
+	write_dict(all_rules, "all-rules.txt")
+	write_dict(all_heads, "all-heads.txt")
 
 	# outfilename = "{}{}".format(filename, OUTPUT_FILENAME_STEM)
 	# with open(outfilename, "w") as outfile:
