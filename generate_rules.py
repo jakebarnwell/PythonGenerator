@@ -26,15 +26,21 @@ all_fields = {}
 all_objects = {}
 
 def process(node):	
-	# record_fields(node)
+	"""
+	Processes an AST node
+	"""
 	process_rule(node)
 
 	for child_tree in ast.iter_child_nodes(node):
 		process(child_tree)
 
-# Given an AST node, processes the the rule that made it and its
-#  children, storing the rule so it can be statistically analyzed later
 def process_rule(node):
+	"""
+	Given an AST node, processes the the rule that made it and its
+	children, storing the rule so it can be statistically analyzed later.
+	Additionally updates dictionary files storing various data that will
+	be used later.
+	"""
 	me = node.__class__.__name__
 
 	# Fetch every field (i.e. Child) of this node
@@ -51,83 +57,11 @@ def process_rule(node):
 		rhs = [(ftuple[0], util.fieldValue2className(ftuple[1])) for ftuple in fields]
 	nextLine = "{} -> {}".format(me, str(rhs))
 
-	# Store's relevant data from this node into all_rules,
-	#  all_heads, and all_objects
-	# if nextLine in all_rules:
-	# 	all_rules[nextLine] += 1
-	# else:
-	# 	all_rules[nextLine] = 1
-	
-	# if me in all_heads:
-	# 	current = all_heads[me]
-	# 	if nextLine in current:
-	# 		pass
-	# 	else:
-	# 		current.append(nextLine)
-	# 		all_heads[me] = current
-	# else:
-	# 	all_heads[me] = [nextLine]
-
-	# if me not in all_objects:
-	# 	all_objects[me] = node
-
-	# fields = node._fields
-	# if len(fields) > 0:
-	# 	if me in all_fields:
-	# 		_currentfields = all_fields[me]
-	# 		for field in fields:
-	# 			_currentfields.add(field)
-	# 			all_fields[me] = _currentfields
-	# 	else:
-	# 		all_fields[me] = set(fields)
-
+	# Store's relevant data from this node for later use
 	update_rules(nextLine)
 	update_objects(me, node)
 	update_heads(me, nextLine)
 	update_fields(me, node._fields)
-	
-def update_rules(rule):
-	if rule in all_rules:
-		all_rules[rule] += 1
-	else:
-		all_rules[rule] = 1
-
-def update_objects(head, node):
-	if head not in all_objects:
-		all_objects[head] = node
-
-def update_heads(head, rule):
-	if head in all_heads:
-		current = all_heads[head]
-		if rule in current:
-			pass
-		else:
-			current.append(rule)
-			all_heads[head] = current
-	else:
-		all_heads[head] = [rule]
-
-def update_fields(head, fields):
-	if len(fields) > 0:
-		if head in all_fields:
-			_currentfields = all_fields[head]
-			for field in fields:
-				_currentfields.add(field)
-				all_fields[head] = _currentfields
-		else:
-			all_fields[head] = set(fields)
-
-# def record_fields(node):
-# 	me = node.__class__.__name__
-# 	fields = node._fields
-# 	if len(fields) > 0:
-# 		if me in all_fields:
-# 			_currentfields = all_fields[me]
-# 			for field in fields:
-# 				_currentfields.add(field)
-# 				all_fields[me] = _currentfields
-# 		else:
-# 			all_fields[me] = set(fields)
 
 DEBUG = True
 thresh = 100
@@ -149,35 +83,66 @@ def process_all():
 			except Exception as e:
 				errorsfile.write(str(e) + "\n");
 
-	pcfg = rules2pcfg(all_rules, all_heads)
+	pcfg = util.rules2pcfg(all_rules, all_heads)
+
+	util.write_dict(pcfg, "pcfg.txt")
+	util.write_dict(all_fields, "all-fields.txt")
+	util.write_dict(all_rules, "all-rules.txt")
+	util.write_dict(all_heads, "all-heads.txt")
 
 	return (all_heads, pcfg, all_objects)
 
-def rules2pcfg(rules, heads):
+
+def update_rules(rule):
 	"""
-	Given a dict of all rules and all heads, returns a PCFG for
-	the rules.
-
-	Args:
-	 heads: dict, mapping from 'head' (e.g. 'FunctionDef') to a list of all
-	 		possible (string-versioned) re-write rules for that head, e.g.
-	 		FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['For']), ('decorator_list', [])]
-	 		where each tuple is a field-tuple of the form (fieldKeyClassName, fieldValueClassName)
-	 rules: dict, mapping from each stringified-rule of the form listed in heads 
-	 		to the number of occurrences (invocations) of that rule in the corpora
+	Given a new string-version rule, adds it to the
+	frequency dictionary or increments the count
 	"""
-	pcfg = copy.copy(rules)
+	if rule in all_rules:
+		all_rules[rule] += 1
+	else:
+		all_rules[rule] = 1
 
-	for head in heads:
-		head_rewrite_rules = heads[head]
-		head_sum = 0
-		for rule in head_rewrite_rules:
-			head_sum += rules[rule]
-		for rule in head_rewrite_rules:
-			pcfg[rule] = rules[rule] * 1.0 / head_sum
-	util.write_dict(pcfg, "pcfg.txt")
-	return pcfg
+def update_objects(head, node):
+	"""
+	Given a head, adds an AST node to the dictionary unless
+	such an entry for head already exists
+	"""
+	if head not in all_objects:
+		all_objects[head] = node
 
+def update_heads(head, rule):
+	"""
+	Given a head and a rule, adds the rule to the list of entries
+	under this head, or creates a new entry for head if it doesn't
+	exist and initializes the entry to the singleton list with that
+	rule for this entry
+	"""
+	if head in all_heads:
+		current = all_heads[head]
+		if rule in current:
+			pass
+		else:
+			current.append(rule)
+			all_heads[head] = current
+	else:
+		all_heads[head] = [rule]
+
+def update_fields(head, fields):
+	"""
+	Updates the listing of fields under this type of head, as
+	necessary.
+	"""
+	if len(fields) > 0:
+		if head in all_fields:
+			_currentfields = all_fields[head]
+			for field in fields:
+				if field not in _currentfields:
+					_currentfields.append(field)
+					
+			all_fields[head] = _currentfields
+		else:
+			all_fields[head] = fields
 
 def main(args):
 	if len(args) > 0 and args[0] == "all":
@@ -189,8 +154,7 @@ def main(args):
 		tree = ast.parse(source)
 		process(tree)
 
-	util.write_dict(all_rules, "all-rules.txt")
-	util.write_dict(all_heads, "all-heads.txt")
+
 
 	# outfilename = "{}{}".format(filename, OUTPUT_FILENAME_STEM)
 	# with open(outfilename, "w") as outfile:
