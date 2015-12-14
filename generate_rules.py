@@ -123,7 +123,7 @@ def record_fields(tree):
 			all_fields[me] = set(fields)
 
 DEBUG = True
-thresh = 100
+thresh = 10
 def process_all():
 	FILESDIR = "data/python_files"
 	n = 0
@@ -143,7 +143,7 @@ def process_all():
 				errorsfile.write(str(e) + "\n");
 
 	pcfg = rules2pcfg(all_rules, all_heads)
-	print "here"
+
 	return (all_heads, pcfg, all_objects)
 
 def rules2pcfg(rules, heads):

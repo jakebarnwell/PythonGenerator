@@ -1,9 +1,11 @@
 import sys
 import copy
 import random
+import ast
 
 import generate_rules
 
+TREE_SEED = "Module"
 
 def main(args):
 	# Be sure to copy the object every time you make a new one
@@ -17,14 +19,14 @@ def main(args):
 	# 	total += pcfg[r]
 	# print "total sum is: " + str(total)
 
-	tree = build_tree(heads, pcfg, objects, copy.copy(objects["Module"]))
+	tree = build_tree(heads, pcfg, objects)
 
 def random_draw(eles, probs):
 	assert len(eles) == len(probs)
 	sumProbs = sum(probs)
 	assert sumProbs > 0
 	probs = map(lambda p: p / sumProbs, probs)
-	CDF = reduce()
+	# CDF = reduce()
 
 	r = random.random()
 	cumsum = 0
@@ -34,18 +36,29 @@ def random_draw(eles, probs):
 			return eles[i]
 			
 
-def build_tree(startNode, heads, pcfg, objects):
+def build_tree(heads, pcfg, objects):
 	def do_build_tree(node):
 		possible_rules = heads[node.__class__.__name__]
 		probabilities = [pcfg[rule] for rule in possible_rules]
 		rule = random_draw(possible_rules, probabilities)
+		node = populateNode(node, rule)
+		print node
+		print ast.dump(node)
+		for child in ast.iter_child_nodes(node):
+			print "child is:"
+			print child
+			child = do_build_tree(child)
 
-		populateNode(node, rule) 
-
-	startNode = ... # do stuff to modify this Module node appropriately
+	startNode = copy.copy(objects[TREE_SEED])
 	return do_build_tree(startNode)
 
+def populateNode(node, rule):
+	(sRule_head, sRule_constituent) = map(lambda s: s.strip(), rule.split("->"))
+	rule_constituent = eval(sRule_constituent)
 
+	for attrPair in rule_constituent:
+		setattr(node, attrPair[0], attrPair[1])
+	return node
 
 if __name__=='__main__':
 	main(sys.argv[1:])
