@@ -24,6 +24,9 @@ all_fields = {}
 #  such nodes so I can easily generate objects of a given class
 #  name on the fly
 all_objects = {}
+# Maps each of the seven primitive class names to a list of
+#  *all* (not just unique) occurrences of that primitive
+all_primitives = {}
 
 def process(node):	
 	"""
@@ -62,6 +65,7 @@ def process_rule(node):
 	update_objects(me, node)
 	update_heads(me, nextLine)
 	update_fields(me, node._fields)
+	update_primitives(fields)
 
 DEBUG = True
 thresh = 100
@@ -81,6 +85,7 @@ def process_all():
 				tree = ast.parse(source)
 				process(tree)
 			except Exception as e:
+				errorsfile.write("Error near {}: ".format(file_tuple[0]))
 				errorsfile.write(str(e) + "\n");
 
 	pcfg = util.rules2pcfg(all_rules, all_heads)
@@ -89,9 +94,43 @@ def process_all():
 	util.write_dict(all_fields, "all-fields.txt")
 	util.write_dict(all_rules, "all-rules.txt")
 	util.write_dict(all_heads, "all-heads.txt")
+	util.write_dict(all_primitives, "all-primitives.txt")
 
-	return (all_heads, pcfg, all_objects)
+	return (all_heads, pcfg, all_objects, all_primitives)
 
+def update_primitives(fields):
+	"""
+	Given fields, a list of field-tuples like [('id', 'segment'), ...]
+	stores the usage of any primitive ones so we can re-use them
+	in code generation.
+	"""
+	primitives = ["str","unicode","bool","int","long","float","complex"]
+	def do_update_primitive(className, val):
+		# if className == "str":
+		# 	pass
+		# if className == "unicode":
+		# 	pass
+		# if className == "bool":
+		# 	pass
+		# if className == "int":
+		# 	pass
+		# if className == "long":
+		# 	pass
+		# if className == "float":
+		# 	pass
+		# if className == "complex":
+		# 	pass
+		if className in all_primitives:
+			_primitives = all_primitives[className]
+			_primitives.append(val)
+			all_primitives[className] = _primitives
+		else:
+			all_primitives[className] = [val]
+
+	for f in fields:
+		className = util.fieldValue2className(f[1])
+		if className in primitives:
+			do_update_primitive(className, f[1])
 
 def update_rules(rule):
 	"""

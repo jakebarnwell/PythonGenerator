@@ -1,3 +1,3 @@
-list index out of range
-invalid syntax (<unknown>, line 12)
-invalid syntax (<unknown>, line 1)
+Error near data/python_files: list index out of range
+Error near data/python_files/38255839: invalid syntax (<unknown>, line 12)
+Error near data/python_files/98837602: invalid syntax (<unknown>, line 1)

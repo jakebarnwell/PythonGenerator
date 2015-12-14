@@ -18,20 +18,23 @@ def log(msg, lvl):
 	with open("debug.log", "a") as debug:
 		debug.write("  "*lvl + msg + "\n")
 
+def random_draw(eles, probs=None):
+	if probs != None:
+		assert len(eles) == len(probs)
+		sumProbs = sum(probs)
+		assert sumProbs > 0
+		probs = map(lambda p: p / sumProbs, probs)
+		# CDF = reduce()
 
-def random_draw(eles, probs):
-	assert len(eles) == len(probs)
-	sumProbs = sum(probs)
-	assert sumProbs > 0
-	probs = map(lambda p: p / sumProbs, probs)
-	# CDF = reduce()
-
-	r = random.random()
-	cumsum = 0
-	for i in range(len(eles)):
-		cumsum += probs[i]
-		if r <= cumsum:
-			return eles[i]
+		r = random.random()
+		cumsum = 0
+		for i in range(len(eles)):
+			cumsum += probs[i]
+			if r <= cumsum:
+				return eles[i]
+	else:
+		ind = random.randint(0, len(eles) - 1)
+		return eles[ind]
 
 def rules2pcfg(rules, heads):
 	"""

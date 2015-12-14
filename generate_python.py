@@ -14,22 +14,17 @@ MODULE = "Module"
 heads = {}
 pcfg = {}
 objects = {}
+primitives = {}
 
 def main(args):
 	global heads
 	global pcfg
 	global objects
+	global primitives
 
 	# Be sure to copy the object every time you make a new one
 	#  using copy.copy(object)
-	(heads, pcfg, objects) = generate_rules.process_all();
-
-	# rules = heads[heads.keys()[0]]
-	# total = 0
-	# for r in rules:
-	# 	print pcfg[r]
-	# 	total += pcfg[r]
-	# print "total sum is: " + str(total)
+	(heads, pcfg, objects, primitives) = generate_rules.process_all();
 
 	tree = makeNode(MODULE, 0)
 
@@ -42,12 +37,15 @@ def main(args):
 	with open("generated_code.py", "w") as out:
 		Unparser.Unparser(tree, out)
 
-# Transforms a string rule, e.g.
-#  "Module -> [('body', ['Import', 'ImportFrom', 'ImportFrom', 'ClassDef'])]"
-# into a tuple of the form, e.g.,
-#  ("Module", [('body', ['Import', 'ImportFrom', 'ImportFrom', 'ClassDef'])])
-# i.e. a tuple of the form (String, List) or, in rare cases, (String, "<NULL>")
+
 def sRule2tRule(sRule):
+	"""
+	Transforms a string rule, e.g.
+	 "Module -> [('body', ['Import', 'ImportFrom', 'ImportFrom', 'ClassDef'])]"
+	into a tuple of the form, e.g.,
+	 ("Module", [('body', ['Import', 'ImportFrom', 'ImportFrom', 'ClassDef'])])
+	i.e. a tuple of the form (String, List) or, in rare cases, (String, "<NULL>")
+	"""
 	(sRule_head, sRule_constituent) = map(lambda s: s.strip(), sRule.split("->"))
 	
 	# The standard case where sRule_constituent is like "[...]", a list of stuff
@@ -78,10 +76,6 @@ def makeNode(className, lvl):
 all_primitive_fields = {}
 def populateField(field, lvl):
 	log("populateField({})".format(field),lvl)
-	def populateFieldNode():
-		return makeNode(field, lvl+1)
-	def populateFieldPrimitive():
-		return make_primitive(field)
 
 	# Handles the case where field is a list of things, like Module(body=[...])
 	if isinstance(field, list):
@@ -107,8 +101,8 @@ def populateField(field, lvl):
 	return populated
 
 def make_primitive(primitive_className):
-	p = {"int": 3, "float": 77.7, "bool": True, "unicode": u"66", "str": "foobar", "long": 14L, "complex": 8+9j}
-	return p[primitive_className]
+	# p = {"int": 3, "float": 77.7, "bool": True, "unicode": u"66", "str": "foobar", "long": 14L, "complex": 8+9j}
+	return util.random_draw(primitives[primitive_className])
 
 if __name__=='__main__':
 	main(sys.argv[1:])
