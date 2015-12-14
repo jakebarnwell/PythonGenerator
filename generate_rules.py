@@ -1,5 +1,3 @@
-from nltk import CFG
-
 import sys
 import ast
 import Unparser
@@ -28,7 +26,7 @@ all_fields = {}
 all_objects = {}
 
 def process(node):	
-	record_fields(node)
+	# record_fields(node)
 	process_rule(node)
 
 	for child_tree in ast.iter_child_nodes(node):
@@ -55,37 +53,81 @@ def process_rule(node):
 
 	# Store's relevant data from this node into all_rules,
 	#  all_heads, and all_objects
-	if nextLine in all_rules:
-		all_rules[nextLine] += 1
-	else:
-		all_rules[nextLine] = 1
+	# if nextLine in all_rules:
+	# 	all_rules[nextLine] += 1
+	# else:
+	# 	all_rules[nextLine] = 1
 	
-	if me in all_heads:
-		current = all_heads[me]
-		if nextLine in current:
+	# if me in all_heads:
+	# 	current = all_heads[me]
+	# 	if nextLine in current:
+	# 		pass
+	# 	else:
+	# 		current.append(nextLine)
+	# 		all_heads[me] = current
+	# else:
+	# 	all_heads[me] = [nextLine]
+
+	# if me not in all_objects:
+	# 	all_objects[me] = node
+
+	# fields = node._fields
+	# if len(fields) > 0:
+	# 	if me in all_fields:
+	# 		_currentfields = all_fields[me]
+	# 		for field in fields:
+	# 			_currentfields.add(field)
+	# 			all_fields[me] = _currentfields
+	# 	else:
+	# 		all_fields[me] = set(fields)
+
+	update_rules(nextLine)
+	update_objects(me, node)
+	update_heads(me, nextLine)
+	update_fields(me, node._fields)
+	
+def update_rules(rule):
+	if rule in all_rules:
+		all_rules[rule] += 1
+	else:
+		all_rules[rule] = 1
+
+def update_objects(head, node):
+	if head not in all_objects:
+		all_objects[head] = node
+
+def update_heads(head, rule):
+	if head in all_heads:
+		current = all_heads[head]
+		if rule in current:
 			pass
 		else:
-			current.append(nextLine)
-			all_heads[me] = current
+			current.append(rule)
+			all_heads[head] = current
 	else:
-		all_heads[me] = [nextLine]
+		all_heads[head] = [rule]
 
-	if me not in all_objects:
-		all_objects[me] = node
-
-
-
-def record_fields(tree):
-	me = tree.__class__.__name__
-	fields = tree._fields
+def update_fields(head, fields):
 	if len(fields) > 0:
-		if me in all_fields:
-			_currentfields = all_fields[me]
+		if head in all_fields:
+			_currentfields = all_fields[head]
 			for field in fields:
 				_currentfields.add(field)
-				all_fields[me] = _currentfields
+				all_fields[head] = _currentfields
 		else:
-			all_fields[me] = set(fields)
+			all_fields[head] = set(fields)
+
+# def record_fields(node):
+# 	me = node.__class__.__name__
+# 	fields = node._fields
+# 	if len(fields) > 0:
+# 		if me in all_fields:
+# 			_currentfields = all_fields[me]
+# 			for field in fields:
+# 				_currentfields.add(field)
+# 				all_fields[me] = _currentfields
+# 		else:
+# 			all_fields[me] = set(fields)
 
 DEBUG = True
 thresh = 100
