@@ -1,6 +1,7 @@
 import json
 import copy
 import random
+import numpy
 
 def fieldValue2className(val):
 	className = val.__class__.__name__
@@ -18,12 +19,20 @@ def log(msg, lvl):
 	with open("debug.log", "a") as debug:
 		debug.write("  "*lvl + msg + "\n")
 
+# For whatever reason, using numpy is 1200 times slower so I just define
+#  my own random_draw function
 def random_draw(eles, probs=None):
+	"""
+	Given a list of elements, randomly draws one of them. If a
+	probability distribution is provided (as an array), the element 
+	from eles is randomly chosen with respect to that distribution.
+	The probability distribution elements do not have to add to 1.
+	"""
 	if probs != None:
 		assert len(eles) == len(probs)
 		sumProbs = sum(probs)
 		assert sumProbs > 0
-		probs = map(lambda p: p / sumProbs, probs)
+		probs = map(lambda p: 1.0*p / sumProbs, probs)
 		# CDF = reduce()
 
 		r = random.random()
@@ -32,9 +41,38 @@ def random_draw(eles, probs=None):
 			cumsum += probs[i]
 			if r <= cumsum:
 				return eles[i]
+		return eles[-1] #Fall-through, just in case weird floating error math
 	else:
 		ind = random.randint(0, len(eles) - 1)
 		return eles[ind]
+
+def test_random_draw():
+	"""
+	Tests my random_draw function to make sure I didn't
+	screw it up too much.
+	"""
+	numDraws = 1000000
+	numEles = 10
+	li = range(numEles)
+	frequencies = [0] * numEles
+	for i in range(numDraws):
+		frequencies[random_draw(li)] += 1
+	frequencies = map(lambda x: 1.0*x / numDraws, frequencies)
+	print "Uniform probability test."
+	print "Frequencies of each element drawn:"
+	print frequencies
+
+	print "\n"
+
+	li = [0, 1, 2, 3]
+	probs = [0, 1, 2, 3]
+	frequencies = [0, 0, 0, 0]
+	for i in range(numDraws):
+		frequencies[random_draw(li, probs)] += 1
+	frequencies = map(lambda x: 1.0*x / numDraws, frequencies)
+	print "Non-uniform probability test. Probability distribution is " + str(probs)
+	print "Frequencies of each element drawn:"
+	print frequencies
 
 def rules2pcfg(rules, heads):
 	"""

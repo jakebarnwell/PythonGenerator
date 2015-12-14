@@ -1,1 +1,1 @@
-{"int": 112, "float": 2, "bool": 3, "unicode": 2, "str": 1317}
+{"int": 47, "bool": 1, "unicode": 2, "str": 843}

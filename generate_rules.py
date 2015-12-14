@@ -25,7 +25,7 @@ all_fields = {}
 #  name on the fly
 all_objects = {}
 # Maps each of the seven primitive class names to a list of
-#  *all* (not just unique) occurrences of that primitive
+#  unique occurrences with their frequencies
 all_primitives = {}
 
 def process(node):	
@@ -101,31 +101,20 @@ def process_all():
 def update_primitives(fields):
 	"""
 	Given fields, a list of field-tuples like [('id', 'segment'), ...]
-	stores the usage of any primitive ones so we can re-use them
-	in code generation.
+	updates the usage of any primitive ones in a frequency map so
+	we can re-use them later
 	"""
 	primitives = ["str","unicode","bool","int","long","float","complex"]
 	def do_update_primitive(className, val):
-		# if className == "str":
-		# 	pass
-		# if className == "unicode":
-		# 	pass
-		# if className == "bool":
-		# 	pass
-		# if className == "int":
-		# 	pass
-		# if className == "long":
-		# 	pass
-		# if className == "float":
-		# 	pass
-		# if className == "complex":
-		# 	pass
 		if className in all_primitives:
 			_primitives = all_primitives[className]
-			_primitives.append(val)
+			if val in _primitives:
+				_primitives[val] += 1
+			else:
+				_primitives[val] = 1
 			all_primitives[className] = _primitives
 		else:
-			all_primitives[className] = [val]
+			all_primitives[className] = {val: 1}
 
 	for f in fields:
 		className = util.fieldValue2className(f[1])
