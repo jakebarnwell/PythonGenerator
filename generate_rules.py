@@ -8,57 +8,53 @@ import os
 import load
 import copy
 
+import util
+
 PARSE_FILENAME = "Unparser.py"
 OUTPUT_FILENAME_STEM = ".out.py"
 
-rules = []
+# stores all individual rules with their frequency counts
 all_rules = {}
+# stores all possible AST nodes mapped to a list containing
+#  every possible rule with given AST node (head) as a lhs
 all_heads = {}
+# stores each AST node (head) mapped to all possible constituent
+#  field types
 all_fields = {}
+# Maps each AST node (head), in className form, to an object
+#  (true AST node) of that type. This allows for easy access to
+#  such nodes so I can easily generate objects of a given class
+#  name on the fly
 all_objects = {}
 
-def process(tree):
-	me = tree.__class__.__name__
-	
-	record_fields(tree)
-	
+def process(node):	
+	record_fields(node)
+	process_rule(node)
 
-	children = [c for c in ast.iter_child_nodes(tree)]
-	childNames = [child.__class__.__name__ for child in children]
-	childrenString = " ".join(childNames)
-
-	# if len(children) > 0 or len(tree._fields) > 0:
-	# 	cs = childrenString if len(children) > 0 else "X"
-	# 	fs = [field+"="+str(getattr(tree, field)) for field in tree._fields]
-		# print me + str(fs) + " -> " + cs
-
-	# print "\n new tree for " + me + ":"
-	# for f in ast.iter_fields(tree):
-	# 	print f
-	# for c in children:
-	# 	print c
-
-	process_rule(tree)
-
-	for child_tree in children:
-		# print ast.dump(child_tree)
-		# print vars(child_tree)
-		# print dir(child_tree)
-		# print "attrs: " + str(child_tree._attributes)
+	for child_tree in ast.iter_child_nodes(node):
 		process(child_tree)
 
+# Given an AST node, processes the the rule that made it and its
+#  children, storing the rule so it can be statistically analyzed later
+def process_rule(node):
+	me = node.__class__.__name__
 
-def process_rule(tree):
-	me = tree.__class__.__name__
+	# Fetch every field (i.e. Child) of this node
 	fields = []
-	for f in ast.iter_fields(tree):
+	for f in ast.iter_fields(node):
 		fields.append(f)
-	if len(fields)  ==  0:
+
+	# Store each field as a tuple (key, valueClassName), and write to string the
+	#  re-write rule in the form of "NodeClass -> [(key, valueClassName), ...] in
+	#  a dict for later use.
+	if len(fields) ==  0:
 		rhs = "<NULL>"
 	else:
-		rhs = [(ftuple[0], fieldValue2className(ftuple[1])) for ftuple in fields]
+		rhs = [(ftuple[0], util.fieldValue2className(ftuple[1])) for ftuple in fields]
 	nextLine = "{} -> {}".format(me, str(rhs))
-	rules.append(nextLine)
+
+	# Store's relevant data from this node into all_rules,
+	#  all_heads, and all_objects
 	if nextLine in all_rules:
 		all_rules[nextLine] += 1
 	else:
@@ -75,39 +71,8 @@ def process_rule(tree):
 		all_heads[me] = [nextLine]
 
 	if me not in all_objects:
-		all_objects[me] = tree
+		all_objects[me] = node
 
-def fieldValue2className(val):
-	className = val.__class__.__name__
-
-	listlike = ["tuple","list"]
-	if className in listlike:
-		if className == "tuple":
-			return tuple([rule_classType(e) for e in val])
-		elif className == "list":
-			return [fieldValue2className(e) for e in val]
-	else:
-		return className
-
-
-# tree._attributes: lineno, col_offset
-# tree._fields: e.g. lower, upper, step, n, id, ctx, s, etc.
-
-# When doing the rules, couple the fields with the children. For example:
-# Slice['lower=<_ast.Num object at 0x7f09e94bced0>', 'upper=None', 'step=None'] -> Num
-# The children of Slice are directly linked to the fields (in this case, 'lower')
-# In fact, I'm pretty sure the children only exist if the relevent fields are filled in
-
-# I'm going to want rules like this
-#  Node -> [field1notNull, field2notNull, ...]
-#  Node -> '<NULL>'
-
-
-# Num(n=1), Str(s='foo'), 
-
-def write_dict(d, filename):
-	with open(filename, "w") as outfile:
-		outfile.write(json.dumps(d))
 
 
 def record_fields(tree):
@@ -123,7 +88,7 @@ def record_fields(tree):
 			all_fields[me] = set(fields)
 
 DEBUG = True
-thresh = 10
+thresh = 100
 def process_all():
 	FILESDIR = "data/python_files"
 	n = 0
@@ -155,7 +120,7 @@ def rules2pcfg(rules, heads):
 	 heads: dict, mapping from 'head' (e.g. 'FunctionDef') to a list of all
 	 		possible (string-versioned) re-write rules for that head, e.g.
 	 		FunctionDef -> [('name', 'str'), ('args', 'arguments'), ('body', ['For']), ('decorator_list', [])]
-	 		where each tuple is a field-tuple of the form (fieldName, fieldValueClass)
+	 		where each tuple is a field-tuple of the form (fieldKeyClassName, fieldValueClassName)
 	 rules: dict, mapping from each stringified-rule of the form listed in heads 
 	 		to the number of occurrences (invocations) of that rule in the corpora
 	"""
@@ -168,7 +133,7 @@ def rules2pcfg(rules, heads):
 			head_sum += rules[rule]
 		for rule in head_rewrite_rules:
 			pcfg[rule] = rules[rule] * 1.0 / head_sum
-	write_dict(pcfg, "pcfg.txt")
+	util.write_dict(pcfg, "pcfg.txt")
 	return pcfg
 
 
@@ -182,8 +147,8 @@ def main(args):
 		tree = ast.parse(source)
 		process(tree)
 
-	write_dict(all_rules, "all-rules.txt")
-	write_dict(all_heads, "all-heads.txt")
+	util.write_dict(all_rules, "all-rules.txt")
+	util.write_dict(all_heads, "all-heads.txt")
 
 	# outfilename = "{}{}".format(filename, OUTPUT_FILENAME_STEM)
 	# with open(outfilename, "w") as outfile:

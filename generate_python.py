@@ -147,7 +147,7 @@ def populateField(field, lvl):
 	return populated
 
 def make_primitive(primitive_className):
-	p = {"int": 333, "float": 77.7, "bool": True, "unicode": u"66", "str": "foobar"}
+	p = {"int": 3, "float": 77.7, "bool": True, "unicode": u"66", "str": "foobar"}
 	return p[primitive_className]
 
 if __name__=='__main__':
