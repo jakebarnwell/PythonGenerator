@@ -6,6 +6,7 @@ import Unparser
 import json
 import util
 from util import log 
+import re
 
 import generate_rules
 
@@ -17,6 +18,8 @@ objects = {}
 primitives = {}
 
 def main(args):
+	util.init()
+
 	global heads
 	global pcfg
 	global objects
@@ -125,14 +128,64 @@ def special_filter(val, className, context):
 	 className The class name of the primitive value, e.g. "str" or "long"
 	 context The context stack (list of tuples) for this step in the generation process
 	"""
+	parent = context[-1]
+	if len(context) > 1:
+		grandpa = context[-2]
+	else:
+		grandpa = None
+
+	moduleRE = r"^[a-zA-Z_]+\w+$"
+	nameRE = r"^[a-zA-Z_]+\w+$"
+	# funcNameRE = 
+
 	stringy = ["str", "unicode"]
 	inty = ["int", "long"]
 	if className in stringy:
 		pass
 
 	if className in inty:
-		if context[-1] == ("ImportFrom", "level"):
+		if parent == ("ImportFrom", "level"):
 			return val >= 0 and val <= 1
+
+	if className in stringy:
+		# Just get rid of string representations of True and False, because
+		#  they are rarely good news. Unfortunately, this means that we will
+		#  basically never see True or False in the generated code, but thankfully
+		#  most code files don't have those anyway so they won't be missed too much.
+		if val in ["True", "False"]:
+			return False
+
+		# Make sure import module names are proper
+		if parent == ("ImportFrom", "module"):
+			return re.search(moduleRE, val) != None
+		if grandpa and grandpa[1] == "names" and grandpa[0] in ["ImportFrom","Import"]:
+			return re.search(moduleRE, val) != None
+
+		# Ensure variable names are proper:
+		if parent == ("Name", "id"):
+			return re.search(nameRE, val) != None
+
+		# Ensure function names are proper
+		if parent == ("FunctionDef", "name"):
+			return re.search(nameRE, val) != None
+
+		# Ensure attribute names (like object.attribute) are proper
+		if parent == ("Attribute", "attr"):
+			return re.search(nameRE, val) != None
+
+		# Protect against bad class names:
+		if parent == ("ClassDef", "name"):
+			return re.search(nameRE, val) != None
+
+		# Protect against stupid assignments like:  foo bar cat = ... 
+		if parent == ("Assign", "targets"):
+			return re.search(nameRE, val) != None
+
+			# ('Call', 'keywords'), ('keyword', 'arg')
+		# Protect against pad arguments to a function, like func(this is a bad arg):
+		if parent == ("keyword", "arg"):
+			return re.search(nameRE, val) != None
+
 
 	return True
 

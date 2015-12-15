@@ -19,6 +19,10 @@ def log(msg, lvl):
 	with open("debug.log", "a") as debug:
 		debug.write("  "*lvl + msg + "\n")
 
+def init():
+	with open("debug.log", "w") as debug:
+		debug.write("")
+
 # For whatever reason, using numpy is 1200 times slower so I just define
 #  my own random_draw function
 def random_draw(eles, probs=None):
