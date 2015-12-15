@@ -10,7 +10,7 @@ import ast
 
 def process(node):	
 	"""
-	Processes an AST node
+	Processes an AST node.
 	"""
 	process_rule(node)
 
@@ -74,7 +74,7 @@ def process_all():
 	write_dict(all_rules, "dicts/all-rules.dict")
 	write_dict(all_heads, "dicts/all-heads.dict")
 
-	# Do naive smoothing on primitives. This is far more than sufficient to
+	# Do naive smoothing on primitives. This is more than sufficient to
 	#  add a bit of variety into the dictionary. Conservation of frequency
 	#  doesn't matter since it's all normalized later.
 	for pcn in all_primitives:

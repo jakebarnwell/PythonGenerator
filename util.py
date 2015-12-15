@@ -73,6 +73,10 @@ def rules2pcfg(rules, heads):
 	 		where each tuple is a field-tuple of the form (fieldKeyClassName, fieldValueClassName)
 	 rules: dict, mapping from each stringified-rule of the form listed in heads 
 	 		to the number of occurrences (invocations) of that rule in the corpora
+
+	Returns:
+	 The PCFG induced from the rules. The PCFG is a dictionary mapping
+	 from string rule to its frqeuency, normalized over each head (LHS).
 	"""
 	pcfg = copy.copy(rules)
 
@@ -141,6 +145,7 @@ def test_random_draw():
 	print "Frequencies of each element drawn:"
 	print frequencies
 
+# A pretty logger for my python generation.
 def log(msg, lvl):
 	with open("logs/generate.log", "a") as debug:
 		debug.write("  "*lvl + msg + "\n")

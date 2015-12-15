@@ -24,12 +24,31 @@ primitives = {}
 
 def makeNode(className, lvl, context):
 	"""
-	Given a string className, for example "FuncDef", creates
-	and returns a full AST node generated using the PCFG. All 
-	fields and children are recursively populated as necessary.
+	Given a string className, a tree-depth level, and a context
+	stack, creates and returns a full AST node generated using
+	the PCFG. All fields and children of this AST node are 
+	recursively populated as necessary.
+
+	Args:
+	 className: string class name of the node that should be
+	 			created, e.g. "Module" or "FuncDef"
+	 lvl: current depth in the AST. The initial call to this 
+	 	  function should have lvl=0. This is mainly used for
+	 	  help printing out logs of the tree creation, but can
+	 	  certainly be used in the future to do smarter generation
+	 	  in a context-sensitive way.
+	 context: a list, representing a stack, of ancestors in 
+	 		  this AST call-chain. Each element of the stack
+	 		  is of the form (className, fieldName), e.g.
+	 		  ("FuncDef", "args") meaning that this current 
+	 		  node is a child of FuncDef under its "args" field.
 	"""
 	log("makeNode({})".format(className),lvl)
+	# copy object since `objects` just stores representative
+	#  object types
 	node = copy.copy(objects[className])
+	# Get possible rules and draw a random rule from those given
+	#  the probabilities of each rule in the PCFG
 	possible_rules = heads[className]
 	probabilities = [pcfg[rule] for rule in possible_rules]
 	sRule = util.random_draw(possible_rules, probabilities)
@@ -37,6 +56,8 @@ def makeNode(className, lvl, context):
 	(head, constituent) = util.sRule2tRule(sRule)
 	log("rule: {}".format(sRule),lvl)
 	if constituent != "<NULL>":
+		# For each RHS element in the rule, populate the element
+		#  appropriately and set the attribute.
 		for attrPair in constituent:
 			newContext = context + [(className, attrPair[0])]
 			populatedField = populateField(field=attrPair[1], lvl=lvl+1, context=newContext)
@@ -50,6 +71,15 @@ def populateField(field, lvl, context):
 	if a rule says that body=[FuncDef, Expr, ClassDef], then this method
 	attempts to populate each of the three elements in the list with 
 	a full AST node. This is done recursively as needed.
+
+	Args:
+	 field: string className or list of string classNames 
+	 		comprising this field. For example, "Expr" or
+	 		["Expr", "FuncDef", "Name"]. This className or
+	 		list of classNames will be populated with the 
+	 		appropriate AST nodes.
+	 lvl: current depth in the AST.
+	 context: context stack 
 	"""
 	log("populateField({})".format(field),lvl)
 	log("context: {}".format(context),lvl)
@@ -77,33 +107,59 @@ def make_primitive(primitive_className, context):
 	"""
 	Given the class name of a primitive, as well as the context stack,
 	returns a randomly chosen primitive of the correct type following
-	the correct restrictions.
+	certain restrictions if applicable.
+
+	Args:
+	 primitive_className: the classname of the primitive. Should be one 
+	 					  of the seven class names given in
+	 					  util.PRIMITIVE_CLASSNAMES
+	 context: context stack
 	"""
 	# Recall primitives dict is of the form:
 	#  primitives[pcn]["normal"|"special"]["vals"|"freqs"]
-	style = "special" if is_special(primitive_className, context) else "normal"
+	style = "special" if is_namelike(primitive_className, context) else "normal"
 
+	# Randomly draw one primitive 
 	vals = primitives[primitive_className][style]["vals"]
 	frequencies = primitives[primitive_className][style]["freqs"]
 
 	return util.random_draw(vals, frequencies)
 
-def is_special(className, context):
+# Basically the issue is that some primitives in Python have to be 
+# "names" like for variables, arguments, function names, and so on.
+# Obviously, there are restrictions on the possible strings that are
+# allowed to populate such names: in particular, a name must start
+# with an underscore or letter, and can only contain underscores,
+# letters, or digits. Note that dots are not allowed because Python
+# takes care of those separately.
+# The other case this is used is for the ImportFrom statement which
+# has a field called 'level' which has to do with the import location
+# in a package. This must be an int and can, in theory, be any non-
+# negative integer. However, in practice, it's only ever 0 or, very
+# occasionally, 1, and I haven't ever seen more than 1 dot.
+def is_namelike(className, context):
 	"""
 	Returns true if this primitive className, given the context, is 
-	deemed to be "special," that is, the returned primitive must match
-	some set of restrictions outlined in prepare_primitives(.)
+	required to be "namelike" in Python. For string-like primitives,
+	this typically means that primitive will be used as the name of
+	a function, variable, argument, or something similar, and hence 
+	the primitive must be a string with only letters, underscores,
+	and numbers, and it can't start with digits.
+	This is where the context stack is used extensively.
 
 	Args:
-	 className The class name of the primitive value, e.g. "str" or "long"
-	 context The context stack (list of tuples) for this step in the generation process
+	 className: the class name of the primitive value, e.g. "str" or "long"
+	 context: context stack
 	"""
+	# The 'parent' is the context entity on the top of the
+	#  context stack. The grandparent is the second to top.
 	parent = context[-1]
 	if len(context) > 1:
 		grandpa = context[-2]
 	else:
 		grandpa = None
 
+	# These are the cases where we have to be careful when picking primitives.
 	if className in util.INTY:
 		return parent == ("ImportFrom", "level")
 
