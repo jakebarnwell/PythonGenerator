@@ -17,12 +17,12 @@ about 15 MB.
 
 To run the code, just run
 ```
-./main.py [NUMBER]
+./main.py [NUM_FILES]
 ```
-where NUMBER is the number of fake Python files you want to 
+where NUM_FILES is the number of fake Python files you want to 
 generate; it is an optional argument, with the default being 5.
 
-# Fetching the Python files (corpus)
+## Fetching the Python files (corpus)
 If you don't have the Python training files in data/, you can
 easily fetch them by first running
 ```
@@ -35,18 +35,19 @@ python data/fetch_python_files.py
 
 We use the CodeSearch API to fetch data.
 
-# Generating fake Python files
+## Generating fake Python files
 The entry point to generate the Python files is the main.py file.
+Obviously, the data/ files must exist before running this.
 
 As stated above, it takes an optional argument, the number of
 files to generate.
 
 To run it, you can either call
 ```
-python main.py
+python main.py [NUM_FILES]
 ```
 or
 ```
-./main.py
+./main.py [NUM_FILES]
 ```
 when inside the repo.
