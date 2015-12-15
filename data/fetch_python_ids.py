@@ -2,7 +2,7 @@ import requests
 import json
 
 IDS_STORE = "python_file_ids.store"
-NUM_FILES = 10000
+NUM_FILES = 1000
 API_BASE = "https://searchcode.com/api/codesearch_I/?"
 
 _QUERY = "import%20lang:python"

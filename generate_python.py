@@ -1,3 +1,6 @@
+# This file takes care of actually generating the fake python code,
+#  given the PCFG and other data has already been calculated.
+
 import sys
 import copy
 import random
@@ -7,6 +10,8 @@ import json
 import util
 from util import log 
 import re
+import postprocess
+from dict import prepare_primitives
 
 import generate_rules
 
@@ -20,152 +25,19 @@ pcfg = {}
 objects = {}
 primitives = {}
 
-def prepare(raw_primitives):
-	p = {}
-
-	nameRE = r"^[a-zA-Z_]+\w+$"
-
-	for pcn in raw_primitives:
-		p[pcn] = {}
-		p[pcn]["normal"] = {}
-		p[pcn]["special"] = {}
-
-		vals = []
-		freqs = []
-		for val in raw_primitives[pcn]:
-			freqs.append(raw_primitives[pcn][val])
-			vals.append(val)
-		p[pcn]["normal"]["vals"] = vals
-		p[pcn]["normal"]["freqs"] = freqs
-
-		if pcn in util.STRINGY:
-			filtered_vals = []
-			filtered_freqs = []
-			for i in range(len(vals)):
-				# Just get rid of string representations of True and False, because
-				#  they are rarely good news. Unfortunately, this means that we will
-				#  basically never see True or False in the generated code, but thankfully
-				#  most code files don't have those anyway so they won't be missed too much.
-				if re.search(nameRE, vals[i]) != None and vals[i] not in ["True","False"]:
-					filtered_vals.append(vals[i])
-					filtered_freqs.append(freqs[i])
-			p[pcn]["special"]["vals"] = filtered_vals
-			p[pcn]["special"]["freqs"] = filtered_freqs
-		elif pcn in util.INTY:
-			filtered_vals = []
-			filtered_freqs = []
-			for i in range(len(vals)):
-				if vals[i] >= 0 and vals[i] <= 1:
-					filtered_vals.append(vals[i])
-					filtered_freqs.append(freqs[i])
-			p[pcn]["special"]["vals"] = filtered_vals
-			p[pcn]["special"]["freqs"] = filtered_freqs
-	return p
-
-def func(text):
-        text = remove_single_line_string(text)
-        text = remove_trailing_commas_unless_its_a_tuple_then_its_ok(text)
-        return text
-
-def remove_single_line_string(text):
-        lines = text.split('\n')
-        rgx1 = re.compile(r"^\s*'[^']*'\s*$")
-        rgx2 = re.compile(r'^\s*"[^"]*"\s*$')
-        new_lines = []
-        for line in lines:
-                if re.match(rgx1, line) or re.match(rgx2, line):
-                        continue
-                new_lines.append(line)
-        new_text = '\n'.join(new_lines)
-        return new_text
-
-def remove_trailing_commas_unless_its_a_tuple_then_its_ok(text):
-        lines = text.split('\n')
-        rgx = re.compile(r"^(.*),\s*(\):.*)$")
-        new_lines = []
-        for line in lines:
-                m = re.match(rgx, line)
-                if m:
-                        new_line = m.groups()[0] + m.groups()[1]
-                        new_lines.append(new_line)
-                else:
-                        new_lines.append(line)
-        new_text = '\n'.join(new_lines)
-        return new_text
-
-def main(args):
-	util.init()
-
-	global heads
-	global pcfg
-	global objects
-	global primitives
-
-	global NUMBER_FILES_TO_GENERATE
-
-	# Be sure to copy the object every time you make a new one
-	#  using copy.copy(object)
-	(heads, pcfg, objects, raw_primitives) = generate_rules.process_all();
-	
-	# Prepare primitives dictionaries by doing some pre-processing on them
-	#  so that future stuff is accessible much quicker:
-	primitives = prepare(raw_primitives)
-
-	if args and len(args) > 0:
-		try:
-			NUMBER_FILES_TO_GENERATE = int(args[0])
-		except:
-			raise ValueError("The first argument to main.py must be an integer!")
-
-
-	numGenerated = 0
-	while True:
-		try:
-			print "Attempting to generate artificial Python file {}/{}".format(numGenerated+1, NUMBER_FILES_TO_GENERATE)
-			tree = makeNode("Module", 0, [])
-			outcode = "generated/code{}.py".format(numGenerated+1)
-			outast = "generated/AST{}.txt".format(numGenerated+1)
-			print "Successfully created {} and {}".format(outcode, outast)
-			with open(outcode, "w") as out:
-				Unparser.Unparser(tree, out)
-			with open(outast, "w") as out:
-				out.write(ast.dump(tree))
-                        with open(outcode) as in_f:
-                                text = in_f.read()
-                        with open(outcode, 'w') as out:
-                                out.write(func(text))
-			numGenerated += 1
-			if numGenerated >= NUMBER_FILES_TO_GENERATE:
-				break
-		except Exception as e:
-			pass # The Fifth Amendment allows me to do this. Shhh...
-
-def sRule2tRule(sRule):
-	"""
-	Transforms a string rule, e.g.
-	 "Module -> [('body', ['Import', 'ImportFrom', 'ImportFrom', 'ClassDef'])]"
-	into a tuple of the form, e.g.,
-	 ("Module", [('body', ['Import', 'ImportFrom', 'ImportFrom', 'ClassDef'])])
-	i.e. a tuple of the form (String, List) or, in rare cases, (String, "<NULL>")
-	"""
-	(sRule_head, sRule_constituent) = map(lambda s: s.strip(), sRule.split("->"))
-	
-	# The standard case where sRule_constituent is like "[...]", a list of stuff
-	try:
-		rule_constituent = eval(sRule_constituent)
-	except: # Catches the case where sRule_constituent is "<NULL>"
-		rule_constituent = sRule_constituent
-
-	return (sRule_head, rule_constituent)
-
 def makeNode(className, lvl, context):
+	"""
+	Given a string className, for example "FuncDef", creates
+	and returns a full AST node generated using the PCFG. All 
+	fields and children are recursively populated as necessary.
+	"""
 	log("makeNode({})".format(className),lvl)
 	node = copy.copy(objects[className])
 	possible_rules = heads[className]
 	probabilities = [pcfg[rule] for rule in possible_rules]
 	sRule = util.random_draw(possible_rules, probabilities)
 
-	(head, constituent) = sRule2tRule(sRule)
+	(head, constituent) = util.sRule2tRule(sRule)
 	log("rule: {}".format(sRule),lvl)
 	if constituent != "<NULL>":
 		for attrPair in constituent:
@@ -176,6 +48,12 @@ def makeNode(className, lvl, context):
 	return node
 
 def populateField(field, lvl, context):
+	"""
+	Populates a field entry from the rules dictionary. For example, 
+	if a rule says that body=[FuncDef, Expr, ClassDef], then this method
+	attempts to populate each of the three elements in the list with 
+	a full AST node. This is done recursively as needed.
+	"""
 	log("populateField({})".format(field),lvl)
 	log("context: {}".format(context),lvl)
 
@@ -217,7 +95,7 @@ def is_special(className, context):
 	"""
 	Returns true if this primitive className, given the context, is 
 	deemed to be "special," that is, the returned primitive must match
-	some set of restrictions outlined in prepare(.)
+	some set of restrictions outlined in prepare_primitives(.)
 
 	Args:
 	 className The class name of the primitive value, e.g. "str" or "long"
@@ -240,3 +118,48 @@ def is_special(className, context):
 
 	return False
 
+def main(args):
+	global NUMBER_FILES_TO_GENERATE
+	if args and len(args) > 0:
+		try:
+			NUMBER_FILES_TO_GENERATE = int(args[0])
+		except:
+			raise ValueError("The first argument to main.py must be an integer!")
+
+	util.init()
+
+	global heads
+	global pcfg
+	global objects
+	global primitives
+
+	# Call the main rule-parsing/generation module first to get our pcfg
+	#  and other data ready to go
+	(heads, pcfg, objects, raw_primitives) = generate_rules.process_all();
+	
+	# Prepare primitives dictionaries by doing some pre-processing on them
+	#  so that future stuff is accessible much quicker:
+	primitives = prepare_primitives(raw_primitives)
+
+	print "\nStarting generation process. Don't be alarmed if it takes awhile."
+	numGenerated = 0
+	while True:
+		try:
+			print "Attempting to generate artificial Python file {}/{}".format(numGenerated+1, NUMBER_FILES_TO_GENERATE)
+			tree = makeNode("Module", 0, [])
+			outcode = "generated/code{}.py".format(numGenerated+1)
+			outast = "generated/AST{}.txt".format(numGenerated+1)
+			with open(outcode, "w") as out:
+				Unparser.Unparser(tree, out)
+			with open(outcode, "r") as in_f:
+				text = in_f.read()
+			with open(outcode, 'w') as out:
+				out.write(postprocess.postprocess(text))
+			with open(outast, "w") as out:
+				out.write(ast.dump(tree))
+			print "Successfully created {} and {}".format(outcode, outast)
+			numGenerated += 1
+			if numGenerated >= NUMBER_FILES_TO_GENERATE:
+				break
+		except Exception as e:
+			pass # The Fifth Amendment allows me to do this. Shhh...
