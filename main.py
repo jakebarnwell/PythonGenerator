@@ -6,8 +6,8 @@
 #     ./main.py 5
 #  generates 5 python files.
 
-import sys
 import generate_python
+import sys
 
 if __name__=='__main__':
 	"""

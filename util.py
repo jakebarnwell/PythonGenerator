@@ -4,7 +4,6 @@
 #  place.
 # They are probably right.
 
-import json
 import copy
 import random
 import os

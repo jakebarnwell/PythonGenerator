@@ -1,19 +1,16 @@
 # This file takes care of actually generating the fake python code,
 #  given the PCFG and other data has already been calculated.
 
-import sys
+from dict import prepare_primitives
+from util import log 
+import postprocess
+import generate_rules
+import util
+import Unparser
+
 import copy
 import random
 import ast
-import Unparser
-import json
-import util
-from util import log 
-import re
-import postprocess
-from dict import prepare_primitives
-
-import generate_rules
 
 # Change this to change the number of fake .py files to generate.
 # This value should also be overridden when calling

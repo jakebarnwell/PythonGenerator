@@ -1,8 +1,8 @@
 # Stores my dictionary files, and contains methods that interact
 #  with these dictionaries.
 
-import re
 import util
+import re
 
 # stores all individual rules with their frequency counts
 all_rules = {}

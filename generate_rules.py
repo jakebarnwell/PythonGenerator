@@ -1,12 +1,12 @@
-import sys
-import ast
-import Unparser
-import json
-import os
-import copy
+# This module looks through the data/ folder for python files, reads
+#  them in, and processes each one to eventually generate a PCFG
+#  and other data.
 
-import util
 from dict import *
+import util
+
+import os
+import ast
 
 def process(node):	
 	"""
@@ -48,6 +48,9 @@ def process_rule(node):
 	update_primitives(fields)
 
 def process_all():
+	"""
+	Processes all data in the data/ folder.
+	"""
 	FILESDIR = "data/python_files"
 	n = 0
 	with open("logs/parse_files.log", "w") as errorsfile:
