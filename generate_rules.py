@@ -99,6 +99,23 @@ def process_all():
 	util.write_dict(all_rules, "dicts/all-rules.dict")
 	util.write_dict(all_heads, "dicts/all-heads.dict")
 
+	# Do naive smoothing on primitives. This is far more than sufficient to
+	#  add a bit of variety into the dictionary. Conservation of frequency
+	#  doesn't matter since it's all normalized later.
+	for pcn in all_primitives:
+		primSum = 0
+		for key in all_primitives[pcn]:
+			primSum += all_primitives[pcn][key]
+		numEles = len(all_primitives[pcn].keys())
+		mean = primSum * 1.0 / numEles
+		
+		for key in all_primitives[pcn]:
+			freq = all_primitives[pcn][key]
+			if freq > mean:
+				all_primitives[pcn][key] = freq - ((freq-mean)/10)
+			else:
+				all_primitives[pcn][key] = freq + (1 + (mean-freq)/10)
+
 	return (all_heads, pcfg, all_objects, all_primitives)
 
 def update_primitives(fields):

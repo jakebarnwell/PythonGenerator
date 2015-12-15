@@ -10,7 +10,10 @@ import re
 
 import generate_rules
 
-MODULE = "Module"
+# Change this to change the number of fake .py files to generate.
+# This value should also be overridden when calling
+#   python main.py <number>
+NUMBER_FILES_TO_GENERATE = 5
 
 heads = {}
 pcfg = {}
@@ -67,6 +70,8 @@ def main(args):
 	global objects
 	global primitives
 
+	global NUMBER_FILES_TO_GENERATE
+
 	# Be sure to copy the object every time you make a new one
 	#  using copy.copy(object)
 	(heads, pcfg, objects, raw_primitives) = generate_rules.process_all();
@@ -75,21 +80,29 @@ def main(args):
 	#  so that future stuff is accessible much quicker:
 	primitives = prepare(raw_primitives)
 
+	if args and len(args) > 0:
+		try:
+			NUMBER_FILES_TO_GENERATE = int(args[0])
+		except:
+			raise ValueError("The first argument to main.py must be an integer!")
+
+	numGenerated = 0
 	while True:
 		try:
-			print "Attempting to generate artificial code..."
-			tree = makeNode(MODULE, 0, [])
-			print "Success! The generated AST and code are in the generated/ directory."
-			break
-		except:
-			print "..."
-
-	with open("generated/AST.txt", "w") as out:
-		out.write(ast.dump(tree))
-
-	with open("generated/code.py", "w") as out:
-		Unparser.Unparser(tree, out)
-
+			print "Attempting to generate artificial Python file {}/{}".format(numGenerated+1, NUMBER_FILES_TO_GENERATE)
+			tree = makeNode("Module", 0, [])
+			outcode = "generated/code{}.py".format(numGenerated+1)
+			outast = "generated/AST{}.txt".format(numGenerated+1)
+			print "Successfully created {} and {}".format(outcode, outast)
+			with open(outcode, "w") as out:
+				Unparser.Unparser(tree, out)
+			with open(outast, "w") as out:
+				out.write(ast.dump(tree))
+			numGenerated += 1
+			if numGenerated >= NUMBER_FILES_TO_GENERATE:
+				break
+		except Exception as e:
+			pass # The Fifth Amendment allows me to do this. Shhh...
 
 def sRule2tRule(sRule):
 	"""
@@ -186,7 +199,7 @@ def is_special(className, context):
 	if className in util.STRINGY:
 		if parent in [("ImportFrom", "module"),("Name", "id"),("FunctionDef", "name"),("Attribute", "attr"),("ClassDef", "name"),("Assign", "targets"),("keyword", "arg")]:
 			return True
-		elif grandpa and grandpa[1] == "names" and grandpa[0] in ["ImportFrom","Import"]:
+		elif grandpa and grandpa in [("FunctionDef", "args"),("ImportFrom","names"),("Import","names")]:
 			return True
 
 	return False
