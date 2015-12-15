@@ -20,9 +20,6 @@ primitives = {}
 def prepare(raw_primitives):
 	p = {}
 
-	stringy = ["str", "unicode"]
-	inty = ["int", "long"]
-
 	nameRE = r"^[a-zA-Z_]+\w+$"
 
 	for pcn in raw_primitives:
@@ -38,7 +35,7 @@ def prepare(raw_primitives):
 		p[pcn]["normal"]["vals"] = vals
 		p[pcn]["normal"]["freqs"] = freqs
 
-		if pcn in stringy:
+		if pcn in util.STRINGY:
 			filtered_vals = []
 			filtered_freqs = []
 			for i in range(len(vals)):
@@ -51,7 +48,7 @@ def prepare(raw_primitives):
 					filtered_freqs.append(freqs[i])
 			p[pcn]["special"]["vals"] = filtered_vals
 			p[pcn]["special"]["freqs"] = filtered_freqs
-		elif pcn in inty:
+		elif pcn in util.INTY:
 			filtered_vals = []
 			filtered_freqs = []
 			for i in range(len(vals)):
@@ -77,15 +74,12 @@ def main(args):
 	# Prepare primitives dictionaries by doing some pre-processing on them
 	#  so that future stuff is accessible much quicker:
 	primitives = prepare(raw_primitives)
-	util.write_dict(primitives, "all-postprocessed-primitives.txt")
+	util.write_dict(primitives, "all-postprocessed-primitives.info")
 
 	tree = makeNode(MODULE, 0, [])
 
 	with open("generated_AST.py", "w") as out:
 		out.write(ast.dump(tree))
-
-	with open("primitive-fields.txt", "w") as out:
-		out.write(json.dumps(all_primitive_fields))
 
 	with open("generated_code.py", "w") as out:
 		Unparser.Unparser(tree, out)
@@ -126,8 +120,6 @@ def makeNode(className, lvl, context):
 
 	return node
 
-
-all_primitive_fields = {}
 def populateField(field, lvl, context):
 	log("populateField({})".format(field),lvl)
 	log("context: {}".format(context),lvl)
@@ -146,19 +138,11 @@ def populateField(field, lvl, context):
 
 	# Handles the case of a primitive field, like 'str' or 'float' or 'int':
 	else:
-		if field not in all_primitive_fields:
-			all_primitive_fields[field] = 1
-		else:
-			all_primitive_fields[field] += 1
 		populated = make_primitive(field, context)
 
 	log("populatedField = {}".format(populated),lvl)
 	return populated
 
-# This function as well as special_filter(.) can be greatly sped up
-#  by doing any number of caching or pre-processing, but the wait isn't
-#  too bad for the size of files we're creating and I was too lazy to
-#  figure out a pythonic way to speed it up.
 def make_primitive(primitive_className, context):
 	"""
 	Given the class name of a primitive, as well as the context stack,
@@ -176,12 +160,11 @@ def make_primitive(primitive_className, context):
 
 def is_special(className, context):
 	"""
-	Returns true if this value 'val' passes certain special filters
-	defined in this function. These predefined filters have been empirically
-	set to return 'better' options for randomly-generated python code.
+	Returns true if this primitive className, given the context, is 
+	deemed to be "special," that is, the returned primitive must match
+	some set of restrictions outlined in prepare(.)
 
 	Args:
-	 val The proposed primitive value, e.g. 128 or "foo"
 	 className The class name of the primitive value, e.g. "str" or "long"
 	 context The context stack (list of tuples) for this step in the generation process
 	"""
@@ -191,47 +174,14 @@ def is_special(className, context):
 	else:
 		grandpa = None
 
-	stringy = ["str", "unicode"]
-	inty = ["int", "long"]
-
-	if className in inty:
+	if className in util.INTY:
 		return parent == ("ImportFrom", "level")
 
-	if className in stringy:
+	if className in util.STRINGY:
 		if parent in [("ImportFrom", "module"),("Name", "id"),("FunctionDef", "name"),("Attribute", "attr"),("ClassDef", "name"),("Assign", "targets"),("keyword", "arg")]:
 			return True
 		elif grandpa and grandpa[1] == "names" and grandpa[0] in ["ImportFrom","Import"]:
 			return True
-
-		# # Make sure import module names are proper
-		# if parent == ("ImportFrom", "module"):
-		# 	return re.search(nameRE, val) != None
-		# if grandpa and grandpa[1] == "names" and grandpa[0] in ["ImportFrom","Import"]:
-		# 	return re.search(nameRE, val) != None
-
-		# # Ensure variable names are proper:
-		# if parent == ("Name", "id"):
-		# 	return re.search(nameRE, val) != None
-
-		# # Ensure function names are proper
-		# if parent == ("FunctionDef", "name"):
-		# 	return re.search(nameRE, val) != None
-
-		# # Ensure attribute names (like object.attribute) are proper
-		# if parent == ("Attribute", "attr"):
-		# 	return re.search(nameRE, val) != None
-
-		# # Protect against bad class names:
-		# if parent == ("ClassDef", "name"):
-		# 	return re.search(nameRE, val) != None
-
-		# # Protect against stupid assignments like:  foo bar cat = ... 
-		# if parent == ("Assign", "targets"):
-		# 	return re.search(nameRE, val) != None
-
-		# # Protect against pad arguments to a function, like func(this is a bad arg):
-		# if parent == ("keyword", "arg"):
-		# 	return re.search(nameRE, val) != None
 
 	return False
 

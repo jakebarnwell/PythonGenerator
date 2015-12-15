@@ -4,6 +4,8 @@ import random
 import numpy
 
 PRIMITIVE_CLASSNAMES = ["str","unicode","bool","int","long","float","complex"]
+STRINGY = ["str", "unicode"]
+INTY = ["int", "long"]
 
 def fieldValue2className(val):
 	className = val.__class__.__name__
