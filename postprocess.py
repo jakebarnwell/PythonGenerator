@@ -64,10 +64,10 @@ def add_randomLineBreaks(text):
 		if i >= len(lines):
 			break
 		new_lines.append(lines[i])
-		if i >= 2:
-			if not (blank(new_lines[-1]) or blank(new_lines[-2])):
+		if i >= 3:
+			if not (blank(new_lines[-1]) or blank(new_lines[-2]) or blank(new_lines[-3])):
 				if random.random() < 0.15:
-					new_lines.append("")
+					new_lines.insert(-1, "")
 		i += 1
 	new_text = '\n'.join(new_lines)
 	return new_text
