@@ -105,8 +105,16 @@ def populateField(field, lvl, context):
 	log("populatedField = {}".format(populated),lvl)
 	return populated
 
+# This function as well as special_filter(.) can be greatly sped up
+#  by doing any number of caching or pre-processing, but the wait isn't
+#  too bad for the size of files we're creating and I was too lazy to
+#  figure out a pythonic way to speed it up.
 def make_primitive(primitive_className, context):
-	# p = {"int": 3, "float": 77.7, "bool": True, "unicode": u"66", "str": "foobar", "long": 14L, "complex": 8+9j}
+	"""
+	Given the class name of a primitive, as well as the context stack,
+	returns a randomly chosen primitive of the correct type following
+	the correct restrictions.
+	"""
 	frequencies_dict = primitives[primitive_className]
 	vals = []
 	frequencies = []
@@ -134,9 +142,7 @@ def special_filter(val, className, context):
 	else:
 		grandpa = None
 
-	moduleRE = r"^[a-zA-Z_]+\w+$"
 	nameRE = r"^[a-zA-Z_]+\w+$"
-	# funcNameRE = 
 
 	stringy = ["str", "unicode"]
 	inty = ["int", "long"]
@@ -157,9 +163,9 @@ def special_filter(val, className, context):
 
 		# Make sure import module names are proper
 		if parent == ("ImportFrom", "module"):
-			return re.search(moduleRE, val) != None
+			return re.search(nameRE, val) != None
 		if grandpa and grandpa[1] == "names" and grandpa[0] in ["ImportFrom","Import"]:
-			return re.search(moduleRE, val) != None
+			return re.search(nameRE, val) != None
 
 		# Ensure variable names are proper:
 		if parent == ("Name", "id"):
@@ -181,11 +187,9 @@ def special_filter(val, className, context):
 		if parent == ("Assign", "targets"):
 			return re.search(nameRE, val) != None
 
-			# ('Call', 'keywords'), ('keyword', 'arg')
 		# Protect against pad arguments to a function, like func(this is a bad arg):
 		if parent == ("keyword", "arg"):
 			return re.search(nameRE, val) != None
-
 
 	return True
 
