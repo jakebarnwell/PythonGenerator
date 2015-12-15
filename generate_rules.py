@@ -3,13 +3,11 @@ import ast
 import Unparser
 import json
 import os
-import load
 import copy
 
 import util
 
-PARSE_FILENAME = "Unparser.py"
-OUTPUT_FILENAME_STEM = ".out.py"
+DEFAULT_PARSE_FILENAME = "Unparser.py"
 
 # stores all individual rules with their frequency counts
 all_rules = {}
@@ -68,20 +66,26 @@ def process_rule(node):
 	update_primitives(fields)
 
 DEBUG = True
-thresh = 100
+thresh = 1000
 def process_all():
 	FILESDIR = "data/python_files"
 	n = 0
-	with open("errors.log", "w") as errorsfile:
+	with open("logs/parse_files.log", "w") as errorsfile:
 		for file_tuple in os.walk(FILESDIR):
 			n += 1
 			if DEBUG and n > thresh:
 				break
 			print "Processing file {}".format(n)
 			try:
+				# This will throw an exception for filenames with bad chars
+				_all = file_tuple[0]+file_tuple[2][0]
+				_all.encode("utf-8")
+
 				filename = "{}/{}".format(file_tuple[0],file_tuple[2][0])
 				with open(filename, "r") as pyfile:
 					source = pyfile.read()
+					# Throw an exception for sources with bad chars:
+					source.encode("utf-8")
 				tree = ast.parse(source)
 				process(tree)
 			except Exception as e:
@@ -90,11 +94,11 @@ def process_all():
 
 	pcfg = util.rules2pcfg(all_rules, all_heads)
 
-	util.write_dict(pcfg, "pcfg.dict")
-	util.write_dict(all_fields, "all-fields.dict")
-	util.write_dict(all_rules, "all-rules.dict")
-	util.write_dict(all_heads, "all-heads.dict")
-	util.write_dict(all_primitives, "all-primitives.dict")
+	util.write_dict(pcfg, "dicts/pcfg.dict")
+	util.write_dict(all_fields, "dicts/all-fields.dict")
+	util.write_dict(all_rules, "dicts/all-rules.dict")
+	util.write_dict(all_heads, "dicts/all-heads.dict")
+	util.write_dict(all_primitives, "dicts/all-primitives.dict")
 
 	return (all_heads, pcfg, all_objects, all_primitives)
 
@@ -105,6 +109,10 @@ def update_primitives(fields):
 	we can re-use them later
 	"""
 	def do_update_primitive(className, val):
+		# complex nums aren't json serializable so store as strings for now
+		if className == "complex":
+			val = str(val)
+
 		if className in all_primitives:
 			_primitives = all_primitives[className]
 			if val in _primitives:
@@ -171,22 +179,3 @@ def update_fields(head, fields):
 		else:
 			all_fields[head] = fields
 
-def main(args):
-	if len(args) > 0 and args[0] == "all":
-		process_all()
-	else:
-		with open(PARSE_FILENAME, "r") as srcfile:
-			source = srcfile.read()
-
-		tree = ast.parse(source)
-		process(tree)
-
-
-
-	# outfilename = "{}{}".format(filename, OUTPUT_FILENAME_STEM)
-	# with open(outfilename, "w") as outfile:
-		# Unparser.Unparser(tree, outfile)
-		# pass
-
-if __name__=='__main__':
-	main(sys.argv[1:])

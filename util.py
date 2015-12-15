@@ -1,7 +1,7 @@
 import json
 import copy
 import random
-import numpy
+import os
 
 PRIMITIVE_CLASSNAMES = ["str","unicode","bool","int","long","float","complex"]
 STRINGY = ["str", "unicode"]
@@ -16,16 +16,29 @@ def fieldValue2className(val):
 		return className
 
 def write_dict(d, filename):
-	with open(filename, "w") as outfile:
-		outfile.write(json.dumps(d))
+	try:
+		with open(filename, "w") as outfile:
+			outfile.write(json.dumps(d))
+	except Exception as e:
+		with open("logs/write_dicts.log","a") as out:
+			out.write(filename + ": " + str(e) + "\n")
 
 def log(msg, lvl):
-	with open("debug.log", "a") as debug:
+	with open("logs/generate.log", "a") as debug:
 		debug.write("  "*lvl + msg + "\n")
 
 def init():
-	with open("debug.log", "w") as debug:
-		debug.write("")
+	if not os.path.isdir("logs"):
+		os.mkdir("logs")
+	if not os.path.isdir("dicts"):
+		os.mkdir("dicts")
+	if not os.path.isdir("generated"):
+		os.mkdir("generated")
+
+	with open("logs/generate.log", "w") as out:
+		out.write("")
+	with open("logs/write_dicts.log","w") as out:
+		out.write("")
 
 # For whatever reason, using numpy is 1200 times slower so I just define
 #  my own random_draw function

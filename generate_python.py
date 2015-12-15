@@ -30,8 +30,13 @@ def prepare(raw_primitives):
 		vals = []
 		freqs = []
 		for val in raw_primitives[pcn]:
+			# Earlier we did complex-->str, now undo that change
+			if pcn == "complex":
+				val = complex(val)
+				freqs.append(raw_primitives[pcn][str(val)])
+			else:
+				freqs.append(raw_primitives[pcn][val])
 			vals.append(val)
-			freqs.append(raw_primitives[pcn][val])
 		p[pcn]["normal"]["vals"] = vals
 		p[pcn]["normal"]["freqs"] = freqs
 
@@ -74,9 +79,16 @@ def main(args):
 	# Prepare primitives dictionaries by doing some pre-processing on them
 	#  so that future stuff is accessible much quicker:
 	primitives = prepare(raw_primitives)
-	util.write_dict(primitives, "all-postprocessed-primitives.dict")
+	util.write_dict(primitives, "dicts/all-postprocessed-primitives.dict")
 
-	tree = makeNode(MODULE, 0, [])
+	while True:
+		try:
+			print "Attempting to generate artificial code..."
+			tree = makeNode(MODULE, 0, [])
+			print "Success! The generated AST and code are in the generated/ directory."
+			break
+		except:
+			print "..."
 
 	with open("generated/AST.txt", "w") as out:
 		out.write(ast.dump(tree))
@@ -185,5 +197,3 @@ def is_special(className, context):
 
 	return False
 
-if __name__=='__main__':
-	main(sys.argv[1:])
