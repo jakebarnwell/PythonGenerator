@@ -74,14 +74,14 @@ def main(args):
 	# Prepare primitives dictionaries by doing some pre-processing on them
 	#  so that future stuff is accessible much quicker:
 	primitives = prepare(raw_primitives)
-	util.write_dict(primitives, "all-postprocessed-primitives.info")
+	util.write_dict(primitives, "all-postprocessed-primitives.dict")
 
 	tree = makeNode(MODULE, 0, [])
 
-	with open("generated_AST.py", "w") as out:
+	with open("generated/AST.txt", "w") as out:
 		out.write(ast.dump(tree))
 
-	with open("generated_code.py", "w") as out:
+	with open("generated/code.py", "w") as out:
 		Unparser.Unparser(tree, out)
 
 

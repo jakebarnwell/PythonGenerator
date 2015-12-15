@@ -1,4 +1,6 @@
-# Found on GitHub/StackOverflow... This is not mine (@Jake Barnwell)
+# Found on http://svn.python.org/view/python/trunk/Demo/parser/unparse.py
+#  from http://stackoverflow.com/questions/768634/parse-a-py-file-read-the-ast-modify-it-then-write-back-the-modified-source-c
+# This is not my code, but is here for proof of concept of the Unparser module.
 
 "Usage: unparse.py <path to source file>"
 import sys

@@ -90,11 +90,11 @@ def process_all():
 
 	pcfg = util.rules2pcfg(all_rules, all_heads)
 
-	util.write_dict(pcfg, "pcfg.info")
-	util.write_dict(all_fields, "all-fields.info")
-	util.write_dict(all_rules, "all-rules.info")
-	util.write_dict(all_heads, "all-heads.info")
-	util.write_dict(all_primitives, "all-primitives.info")
+	util.write_dict(pcfg, "pcfg.dict")
+	util.write_dict(all_fields, "all-fields.dict")
+	util.write_dict(all_rules, "all-rules.dict")
+	util.write_dict(all_heads, "all-heads.dict")
+	util.write_dict(all_primitives, "all-primitives.dict")
 
 	return (all_heads, pcfg, all_objects, all_primitives)
 
