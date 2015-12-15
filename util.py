@@ -3,6 +3,8 @@ import copy
 import random
 import numpy
 
+PRIMITIVE_CLASSNAMES = ["str","unicode","bool","int","long","float","complex"]
+
 def fieldValue2className(val):
 	className = val.__class__.__name__
 

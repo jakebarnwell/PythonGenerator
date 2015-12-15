@@ -104,7 +104,6 @@ def update_primitives(fields):
 	updates the usage of any primitive ones in a frequency map so
 	we can re-use them later
 	"""
-	primitives = ["str","unicode","bool","int","long","float","complex"]
 	def do_update_primitive(className, val):
 		if className in all_primitives:
 			_primitives = all_primitives[className]
@@ -118,7 +117,7 @@ def update_primitives(fields):
 
 	for f in fields:
 		className = util.fieldValue2className(f[1])
-		if className in primitives:
+		if className in util.PRIMITIVE_CLASSNAMES:
 			do_update_primitive(className, f[1])
 
 def update_rules(rule):

@@ -17,6 +17,51 @@ pcfg = {}
 objects = {}
 primitives = {}
 
+def prepare(raw_primitives):
+	p = {}
+
+	stringy = ["str", "unicode"]
+	inty = ["int", "long"]
+
+	nameRE = r"^[a-zA-Z_]+\w+$"
+
+	for pcn in raw_primitives:
+		p[pcn] = {}
+		p[pcn]["normal"] = {}
+		p[pcn]["special"] = {}
+
+		vals = []
+		freqs = []
+		for val in raw_primitives[pcn]:
+			vals.append(val)
+			freqs.append(raw_primitives[pcn][val])
+		p[pcn]["normal"]["vals"] = vals
+		p[pcn]["normal"]["freqs"] = freqs
+
+		if pcn in stringy:
+			filtered_vals = []
+			filtered_freqs = []
+			for i in range(len(vals)):
+				# Just get rid of string representations of True and False, because
+				#  they are rarely good news. Unfortunately, this means that we will
+				#  basically never see True or False in the generated code, but thankfully
+				#  most code files don't have those anyway so they won't be missed too much.
+				if re.search(nameRE, vals[i]) != None and vals[i] not in ["True","False"]:
+					filtered_vals.append(vals[i])
+					filtered_freqs.append(freqs[i])
+			p[pcn]["special"]["vals"] = filtered_vals
+			p[pcn]["special"]["freqs"] = filtered_freqs
+		elif pcn in inty:
+			filtered_vals = []
+			filtered_freqs = []
+			for i in range(len(vals)):
+				if vals[i] >= 0 and vals[i] <= 1:
+					filtered_vals.append(vals[i])
+					filtered_freqs.append(freqs[i])
+			p[pcn]["special"]["vals"] = filtered_vals
+			p[pcn]["special"]["freqs"] = filtered_freqs
+	return p
+
 def main(args):
 	util.init()
 
@@ -27,7 +72,12 @@ def main(args):
 
 	# Be sure to copy the object every time you make a new one
 	#  using copy.copy(object)
-	(heads, pcfg, objects, primitives) = generate_rules.process_all();
+	(heads, pcfg, objects, raw_primitives) = generate_rules.process_all();
+	
+	# Prepare primitives dictionaries by doing some pre-processing on them
+	#  so that future stuff is accessible much quicker:
+	primitives = prepare(raw_primitives)
+	util.write_dict(primitives, "all-postprocessed-primitives.txt")
 
 	tree = makeNode(MODULE, 0, [])
 
@@ -115,17 +165,16 @@ def make_primitive(primitive_className, context):
 	returns a randomly chosen primitive of the correct type following
 	the correct restrictions.
 	"""
-	frequencies_dict = primitives[primitive_className]
-	vals = []
-	frequencies = []
-	for val in frequencies_dict:
-		if special_filter(val, primitive_className, context):
-			vals.append(val)
-			frequencies.append(frequencies_dict[val])
+	# Recall primitives dict is of the form:
+	#  primitives[pcn]["normal"|"special"]["vals"|"freqs"]
+	style = "special" if is_special(primitive_className, context) else "normal"
+
+	vals = primitives[primitive_className][style]["vals"]
+	frequencies = primitives[primitive_className][style]["freqs"]
 
 	return util.random_draw(vals, frequencies)
 
-def special_filter(val, className, context):
+def is_special(className, context):
 	"""
 	Returns true if this value 'val' passes certain special filters
 	defined in this function. These predefined filters have been empirically
@@ -142,56 +191,49 @@ def special_filter(val, className, context):
 	else:
 		grandpa = None
 
-	nameRE = r"^[a-zA-Z_]+\w+$"
-
 	stringy = ["str", "unicode"]
 	inty = ["int", "long"]
-	if className in stringy:
-		pass
 
 	if className in inty:
-		if parent == ("ImportFrom", "level"):
-			return val >= 0 and val <= 1
+		return parent == ("ImportFrom", "level")
 
 	if className in stringy:
-		# Just get rid of string representations of True and False, because
-		#  they are rarely good news. Unfortunately, this means that we will
-		#  basically never see True or False in the generated code, but thankfully
-		#  most code files don't have those anyway so they won't be missed too much.
-		if val in ["True", "False"]:
-			return False
+		if parent in [("ImportFrom", "module"),("Name", "id"),("FunctionDef", "name"),("Attribute", "attr"),("ClassDef", "name"),("Assign", "targets"),("keyword", "arg")]:
+			return True
+		elif grandpa and grandpa[1] == "names" and grandpa[0] in ["ImportFrom","Import"]:
+			return True
 
-		# Make sure import module names are proper
-		if parent == ("ImportFrom", "module"):
-			return re.search(nameRE, val) != None
-		if grandpa and grandpa[1] == "names" and grandpa[0] in ["ImportFrom","Import"]:
-			return re.search(nameRE, val) != None
+		# # Make sure import module names are proper
+		# if parent == ("ImportFrom", "module"):
+		# 	return re.search(nameRE, val) != None
+		# if grandpa and grandpa[1] == "names" and grandpa[0] in ["ImportFrom","Import"]:
+		# 	return re.search(nameRE, val) != None
 
-		# Ensure variable names are proper:
-		if parent == ("Name", "id"):
-			return re.search(nameRE, val) != None
+		# # Ensure variable names are proper:
+		# if parent == ("Name", "id"):
+		# 	return re.search(nameRE, val) != None
 
-		# Ensure function names are proper
-		if parent == ("FunctionDef", "name"):
-			return re.search(nameRE, val) != None
+		# # Ensure function names are proper
+		# if parent == ("FunctionDef", "name"):
+		# 	return re.search(nameRE, val) != None
 
-		# Ensure attribute names (like object.attribute) are proper
-		if parent == ("Attribute", "attr"):
-			return re.search(nameRE, val) != None
+		# # Ensure attribute names (like object.attribute) are proper
+		# if parent == ("Attribute", "attr"):
+		# 	return re.search(nameRE, val) != None
 
-		# Protect against bad class names:
-		if parent == ("ClassDef", "name"):
-			return re.search(nameRE, val) != None
+		# # Protect against bad class names:
+		# if parent == ("ClassDef", "name"):
+		# 	return re.search(nameRE, val) != None
 
-		# Protect against stupid assignments like:  foo bar cat = ... 
-		if parent == ("Assign", "targets"):
-			return re.search(nameRE, val) != None
+		# # Protect against stupid assignments like:  foo bar cat = ... 
+		# if parent == ("Assign", "targets"):
+		# 	return re.search(nameRE, val) != None
 
-		# Protect against pad arguments to a function, like func(this is a bad arg):
-		if parent == ("keyword", "arg"):
-			return re.search(nameRE, val) != None
+		# # Protect against pad arguments to a function, like func(this is a bad arg):
+		# if parent == ("keyword", "arg"):
+		# 	return re.search(nameRE, val) != None
 
-	return True
+	return False
 
 if __name__=='__main__':
 	main(sys.argv[1:])
