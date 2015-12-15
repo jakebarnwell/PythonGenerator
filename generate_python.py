@@ -64,6 +64,37 @@ def prepare(raw_primitives):
 			p[pcn]["special"]["freqs"] = filtered_freqs
 	return p
 
+def func(text):
+        text = remove_single_line_string(text)
+        text = remove_trailing_commas_unless_its_a_tuple_then_its_ok(text)
+        return text
+
+def remove_single_line_string(text):
+        lines = text.split('\n')
+        rgx1 = re.compile(r"^\s*'[^']*'\s*$")
+        rgx2 = re.compile(r'^\s*"[^"]*"\s*$')
+        new_lines = []
+        for line in lines:
+                if re.match(rgx1, line) or re.match(rgx2, line):
+                        continue
+                new_lines.append(line)
+        new_text = '\n'.join(new_lines)
+        return new_text
+
+def remove_trailing_commas_unless_its_a_tuple_then_its_ok(text):
+        lines = text.split('\n')
+        rgx = re.compile(r"^(.*),\s*(\):.*)$")
+        new_lines = []
+        for line in lines:
+                m = re.match(rgx, line)
+                if m:
+                        new_line = m.groups()[0] + m.groups()[1]
+                        new_lines.append(new_line)
+                else:
+                        new_lines.append(line)
+        new_text = '\n'.join(new_lines)
+        return new_text
+
 def main(args):
 	util.init()
 
@@ -95,6 +126,12 @@ def main(args):
 
 	with open("generated/code.py", "w") as out:
 		Unparser.Unparser(tree, out)
+
+        
+	with open("generated/code.py") as in_f:
+		text = in_f.read()
+	with open("generated/code.py", 'w') as out:
+		out.write(func(text))
 
 
 def sRule2tRule(sRule):
