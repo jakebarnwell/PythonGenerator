@@ -1,6 +1,7 @@
 # Handles select post-processing of generated python files.
 
 import re
+import random
 
 def postprocess(text):
 	"""
@@ -10,6 +11,7 @@ def postprocess(text):
 	"""
 	text = remove_singleLineStrings(text)
 	text = remove_trailingCommas(text)
+	text = add_randomLineBreaks(text)
 	return text
 
 def remove_singleLineStrings(text):
@@ -44,5 +46,28 @@ def remove_trailingCommas(text):
 			new_lines.append(new_line)
 		else:
 			new_lines.append(line)
+	new_text = '\n'.join(new_lines)
+	return new_text
+
+def add_randomLineBreaks(text):
+	"""
+	Adds random line breaks throughout the text to make it look 
+	more human-like.
+	"""
+	def blank(line):
+		return re.search(r"^\s*$", line) != None
+	lines = text.split('\n')
+
+	new_lines = []
+	i = 0
+	while True:
+		if i >= len(lines):
+			break
+		new_lines.append(lines[i])
+		if i >= 2:
+			if not (blank(new_lines[-1]) or blank(new_lines[-2])):
+				if random.random() < 0.15:
+					new_lines.append("")
+		i += 1
 	new_text = '\n'.join(new_lines)
 	return new_text

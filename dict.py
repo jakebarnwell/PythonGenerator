@@ -3,6 +3,7 @@
 
 import util
 import re
+import json
 
 # stores all individual rules with their frequency counts
 all_rules = {}
