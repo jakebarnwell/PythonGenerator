@@ -65,7 +65,7 @@ def process_rule(node):
 	update_fields(me, node._fields)
 	update_primitives(fields)
 
-DEBUG = True
+DEBUG = False
 thresh = 1000
 def process_all():
 	FILESDIR = "data/python_files"
@@ -98,7 +98,6 @@ def process_all():
 	util.write_dict(all_fields, "dicts/all-fields.dict")
 	util.write_dict(all_rules, "dicts/all-rules.dict")
 	util.write_dict(all_heads, "dicts/all-heads.dict")
-	util.write_dict(all_primitives, "dicts/all-primitives.dict")
 
 	return (all_heads, pcfg, all_objects, all_primitives)
 
@@ -109,10 +108,6 @@ def update_primitives(fields):
 	we can re-use them later
 	"""
 	def do_update_primitive(className, val):
-		# complex nums aren't json serializable so store as strings for now
-		if className == "complex":
-			val = str(val)
-
 		if className in all_primitives:
 			_primitives = all_primitives[className]
 			if val in _primitives:
