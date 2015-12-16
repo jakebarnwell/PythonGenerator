@@ -31,7 +31,7 @@ def makeNode(className, lvl, context):
 
 	Args:
 	 className: string class name of the node that should be
-	 			created, e.g. "Module" or "FuncDef"
+	 			created, e.g. "Module" or "FunctionDef"
 	 lvl: current depth in the AST. The initial call to this 
 	 	  function should have lvl=0. This is mainly used for
 	 	  help printing out logs of the tree creation, but can
@@ -40,8 +40,8 @@ def makeNode(className, lvl, context):
 	 context: a list, representing a stack, of ancestors in 
 	 		  this AST call-chain. Each element of the stack
 	 		  is of the form (className, fieldName), e.g.
-	 		  ("FuncDef", "args") meaning that this current 
-	 		  node is a child of FuncDef under its "args" field.
+	 		  ("FunctionDef", "args") meaning that this current 
+	 		  node is a child of FunctionDef under its "args" field.
 	"""
 	log("makeNode({})".format(className),lvl)
 	# copy object since `objects` just stores representative
@@ -68,14 +68,14 @@ def makeNode(className, lvl, context):
 def populateField(field, lvl, context):
 	"""
 	Populates a field entry from the rules dictionary. For example, 
-	if a rule says that body=[FuncDef, Expr, ClassDef], then this method
+	if a rule says that body=[FunctionDef, Expr, ClassDef], then this method
 	attempts to populate each of the three elements in the list with 
 	a full AST node. This is done recursively as needed.
 
 	Args:
 	 field: string className or list of string classNames 
 	 		comprising this field. For example, "Expr" or
-	 		["Expr", "FuncDef", "Name"]. This className or
+	 		["Expr", "FunctionDef", "Name"]. This className or
 	 		list of classNames will be populated with the 
 	 		appropriate AST nodes.
 	 lvl: current depth in the AST.
@@ -88,7 +88,7 @@ def populateField(field, lvl, context):
 	if isinstance(field, list):
 		populated = [populateField(thing,lvl+1,context) for thing in field]
 
-	# Handles the case of a single Node, like Expr(...) or FuncDef(...)
+	# Handles the case of a single Node, like Expr(...) or FunctionDef(...)
 	elif field in objects:
 		populated = makeNode(field, lvl+1, context)
 
