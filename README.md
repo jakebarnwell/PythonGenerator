@@ -9,8 +9,7 @@ We read in a corpus of training Python data, and train CFG rules
 using those parsed files. We then induce a PCFG using the
 relevant frequences of the CFG rules, and attempt to stochastically
 generate our own Python "code" based on the PCFG rules, and 
-with the help of the Unparser module (we did not create
-the Unparser code).
+with the help of [this Unparser class](http://svn.python.org/view/python/trunk/Demo/parser/unparse.py?view=markup).
 
 I've included the training data in the repo since it's very small,
 about 15 MB.
