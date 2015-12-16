@@ -33,7 +33,7 @@ and then
 python data/fetch_python_files.py
 ```
 
-We use the CodeSearch API to fetch data.
+We use the searchcode API to fetch data.
 
 ## Generating fake Python files
 The entry point to generate the Python files is the main.py file.
